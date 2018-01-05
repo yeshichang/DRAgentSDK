@@ -1,0 +1,6 @@
+framework module DRAgentSDK {
+  umbrella header "DRAgentSDK.h"
+
+  export *
+  module * { export * }
+}
