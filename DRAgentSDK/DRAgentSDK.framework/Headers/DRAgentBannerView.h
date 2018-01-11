@@ -25,9 +25,9 @@
 -(instancetype)initWithFrame:(CGRect)frame AdDataType:(IAdDataType)adDataType;
 
 /* 打开定时器 */
--(void)openTimer;
+-(void)resumeTimer;
 
 /* 关闭定时器 */
--(void)closeTimer;
+-(void)cancelTimer;
 
 @end
