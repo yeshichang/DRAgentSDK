@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DRAgentSDK"
-  s.version      = "1.8.3"
+  s.version      = "1.8.4"
   s.summary      = "洛米广告SDK"
 
   # This description is used to generate tags and improve search results.
