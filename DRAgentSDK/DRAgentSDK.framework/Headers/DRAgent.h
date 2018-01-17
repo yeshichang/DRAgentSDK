@@ -50,10 +50,12 @@
  @brief  开屏广告
  @param  advertFrame  广告尺寸大小
  @param  splashscreenAdvertResultCallback 回调结果
+ @parma  splashscreenDismissCallback      5s开屏自动消失的回调
  @param  splashscreenRecutnCallback       网页视图返回点击回调
  */
-- (void)showSplashscreenAdvertWithFrame:(CGRect)advertFrame
+-(void)showSplashscreenAdvertWithFrame:(CGRect)advertFrame
                                 result:(void(^)(IAdSuccessBack successBack,NSString * result))splashscreenAdvertResultCallback
+           splashscreenDismissCallback:(void(^)(void))splashscreenDismissCallback
                  webViewReturnCallback:(void(^)(void))splashscreenRecutnCallback;
 
 /*!
