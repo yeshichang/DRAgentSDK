@@ -74,24 +74,6 @@
 
 
 /**
- 通过banner宽度获取其的高度
-
- @param adDataType 类型
- @param width banner宽度
- @return banner高度
- */
-- (CGFloat)getBannerViewHeightWithType:(IAdDataType)adDataType width:(CGFloat)width;
-
-/**
- @brief  横幅(Banner)广告
- @param  adDataType  类型
- @param  rect   尺寸大小
- return  DRAgentBannerView
- */
-- (DRAgentBannerView*)showBannerViewWithType:(IAdDataType)adDataType frame:(CGRect)rect;
-
-
-/**
  @brief  跳入网页视图
  @param  advertDataModel  广告数据model
  @param  index 索引(除此信息流三小图<IAdDataTypeMessageFlowThreeImages>以外,默认传入0)

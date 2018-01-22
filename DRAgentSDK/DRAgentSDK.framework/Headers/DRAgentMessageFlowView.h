@@ -17,7 +17,7 @@
  @param  messageFlowViewType  信息流View类型
  @param  messageFlowResultCallback 回调结果
  */
--(instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
          messageFlowViewType:(IAdMessageFlowViewType)messageFlowViewType
                  clickResult:(void(^)(IAdSuccessBack successBack,NSString *result))messageFlowResultCallback;
 
@@ -31,13 +31,13 @@
  @brief  信息流小图自身高度
  @param  width  宽度 ->注意:一定要和初始化宽度保持一致
  */
-+(CGFloat)getMessageFlowViewSmallImageHeight:(CGFloat)width;
++ (CGFloat)getMessageFlowViewSmallImageHeight:(CGFloat)width;
 
 
 /**
  @brief  信息流大图自身高度
  @param  width  宽度 ->注意:一定要和初始化宽度保持一致
  */
-+(CGFloat)getMessageFlowViewBigImageHeight:(CGFloat)width;
++ (CGFloat)getMessageFlowViewBigImageHeight:(CGFloat)width;
 
 @end
