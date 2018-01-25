@@ -8,26 +8,33 @@
 
 #import <UIKit/UIKit.h>
 #import "DRAgentEnumHeader.h"
+#import "DRAgentBannerAdDelegate.h"
 
 @interface DRAgentBannerView : UIView
 
-/* 关闭按钮是否展示 默认为YES展示*/
+/**
+ 关闭按钮是否展示 默认为YES展示
+ */
 @property (nonatomic,assign) BOOL  isShowCloseButton;
 
+/**
+ Banner 代理
+ */
+@property (nonatomic ,weak) id <DRAgentBannerAdDelegate> delegate;
 
 /**
  初始化BannerView
  
  @param frame               banner尺寸frame
  @param adDataType          banner广告类型 (横幅广告  小横幅广告)
- @param resultCallback      初始化成功或失败的回调
- @param closeClickCallback  点击关闭按钮的回调
  @return                    该类BannerView
  */
-- (instancetype)initWithFrame:(CGRect)frame AdDataType:(IAdDataType)adDataType
-               resultCallback:(void(^)(IAdSuccessBack successBack,NSString * result))resultCallback
-           closeClickCallback:(void(^)(void))closeClickCallback;
+- (instancetype)initWithFrame:(CGRect)frame AdDataType:(IAdDataType)adDataType;
 
+/**
+ 加载Banner数据
+ */
+- (void)loadBannerRequest;
 
 /**
  通过banner宽度获取其的高度

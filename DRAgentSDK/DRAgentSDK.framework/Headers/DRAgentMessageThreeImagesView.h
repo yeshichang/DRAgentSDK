@@ -8,16 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "DRAgentEnumHeader.h"
+#import "DRAgentMessageThreeImagesAdDelegate.h"
 
 @class DRAgentAdvertDataModel;
 @interface DRAgentMessageThreeImagesView : UIView
 
 /**
- @brief  初始化
- @param  threeImagesResultCallback 回调结果
+ MessageThreeImages 代理
  */
-- (instancetype)initWithFrame:(CGRect)frame
-                 clickResult:(void(^)(IAdSuccessBack successBack,NSString *result))threeImagesResultCallback;
+@property (nonatomic ,weak) id <DRAgentMessageThreeImagesAdDelegate> delegate;
+
+/**
+ @brief  初始化
+ */
+- (instancetype)initWithFrame:(CGRect)frame;
 
 /**
  @brief  广告数据model
