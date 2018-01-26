@@ -28,7 +28,7 @@
 /**
  @brief  广告数据model
  */
-@property (nonatomic,strong)DRAgentAdvertDataModel * advertDataModel;
+@property (nonatomic, strong) DRAgentAdvertDataModel *advertDataModel;
 
 /**
  信息流小图文大图文自身高度

@@ -14,7 +14,6 @@
 @class DRAgentAdvertDataModel;
 @interface DRAgentLoader : NSObject
 
-
 /**
  加载数据类代理
  */
@@ -28,11 +27,11 @@
  */
 - (instancetype)initWithIAdDataType:(IAdDataType)advertType;
 
-
 /**
  获取广告数据(原生广告)
  */
 - (void)loadNativeRequest;
+
 
 /**
  @brief  跳入网页视图

@@ -13,7 +13,7 @@
 
 @required
 
-#pragma mark - 数据
+#pragma mark *** 数据 ***
 /**
  Banner广告数据加载成功
  
@@ -32,7 +32,7 @@
 
 @optional
 
-#pragma mark - 点击
+#pragma mark *** 点击 ***
 /**
  Banner广告点击
 
@@ -40,7 +40,6 @@
  @param adverType 广告类型
  */
 - (void)adBannerDidClick:(DRAgentBannerView *)bannerView adverType:(IAdDataType)adverType;
-
 
 /**
  Banner广告关闭按钮被点击

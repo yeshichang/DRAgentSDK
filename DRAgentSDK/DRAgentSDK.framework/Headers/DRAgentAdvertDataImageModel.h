@@ -10,10 +10,10 @@
 
 @interface DRAgentAdvertDataImageModel : NSObject
 
-/* 图片TJ */
+/** 图片TJ */
 @property (nonatomic,strong)NSString * imageTJ;
 
-/* 图片地址 */
+/** 图片地址 */
 @property (nonatomic,strong)NSString * imgurl;
 
 

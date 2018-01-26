@@ -25,7 +25,6 @@
  */
 @property (nonatomic ,assign) CGRect splashFrame;
 
-
 /**
  初始化开屏广告类
 

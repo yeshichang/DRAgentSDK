@@ -14,7 +14,7 @@
 
 @optional
 
-#pragma mark - 数据
+#pragma mark *** 数据 ***
 
 /**
  开屏广告数据加载缓存成功
@@ -33,7 +33,7 @@
 - (void)adSplash:(DRAgentSplash *)agentSplash didFailToReceiveAdWithError:(NSError *)error;
 
 
-#pragma mark - 展示  点击
+#pragma mark *** 展示  点击 ***
 
 /**
  开屏广告展示
@@ -51,7 +51,7 @@
  */
 - (void)adSplashDidClick:(DRAgentSplash *)agentSplash  adverType:(IAdDataType)adverType;
 
-#pragma mark - 返回 回调
+#pragma mark *** 返回 回调 ***
 
 /**
  广告视图消失 (返回主控制器)

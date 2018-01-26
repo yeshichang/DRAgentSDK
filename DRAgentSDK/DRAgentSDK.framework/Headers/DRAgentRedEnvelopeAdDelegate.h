@@ -12,7 +12,7 @@
 @protocol DRAgentRedEnvelopeAdDelegate <NSObject>
 
 @optional
-#pragma mark - 展示 点击
+#pragma mark *** 展示 点击 ***
 /**
  红包广告展示
  
@@ -21,8 +21,8 @@
  @param error 错误error
  */
 - (void)adRedEnvelopeshowed:(DRAgentRedEnvelopeView *)redEnvelopeView
-                    adverType:(IAdDataType)adverType
-           receiveAdWithError:(NSError *)error;
+                  adverType:(IAdDataType)adverType
+         receiveAdWithError:(NSError *)error;
 
 /**
  红包广告点击

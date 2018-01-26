@@ -12,6 +12,8 @@
 
 @interface DRAgentBannerView : UIView
 
+#pragma mark *** API ***
+
 /**
  关闭按钮是否展示 默认为YES展示
  */
@@ -47,7 +49,7 @@
                                  width:(CGFloat)width;
 
 
-
+#pragma mark *** 定时器轮播使用 ***
 
 /*
  *    使用Banner广告的轮播效果要注意几点：
@@ -61,11 +63,11 @@
 /**
  打开定时器
  */
--(void)resumeTimer;
+- (void)resumeTimer;
 
 /**
  关闭定时器
  */
--(void)cancelTimer;
+- (void)cancelTimer;
 
 @end

@@ -18,7 +18,6 @@ FOUNDATION_EXPORT const unsigned char DRAgentSDKVersionString[];
 
 #import <DRAgentSDK/DRAgent.h>
 #import <DRAgentSDK/DRAgentEnumHeader.h>
-#import <DRAgentSDK/DRAgentSDKErrorCode.h>
 #import <DRAgentSDK/DRAgentAdvertDataModel.h>
 #import <DRAgentSDK/DRAgentAdvertDataImageModel.h>
 
@@ -32,7 +31,12 @@ FOUNDATION_EXPORT const unsigned char DRAgentSDKVersionString[];
 #import <DRAgentSDK/DRAgentBannerAdDelegate.h>
 
 #import <DRAgentSDK/DRAgentMessageThreeImagesView.h>
+#import <DRAgentSDK/DRAgentMessageThreeImagesAdDelegate.h>
+
 #import <DRAgentSDK/DRAgentMessageFlowView.h>
+#import <DRAgentSDK/DRAgentMessageFlowAdDelegate.h>
+
 #import <DRAgentSDK/DRAgentRedEnvelopeView.h>
+#import <DRAgentSDK/DRAgentRedEnvelopeAdDelegate.h>
 
 

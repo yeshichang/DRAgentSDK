@@ -6,11 +6,8 @@
 //  Copyright © 2017年 DRAgentSDK. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class DRAgentBannerView;
-@class DRAgentAdvertDataModel;
 @interface DRAgent : NSObject
 
 /**
@@ -28,7 +25,6 @@
  @param value 是否开启标志，注意App发布时请关闭日志输出
  */
 + (void)setLogEnabled:(BOOL)value;
-
 
 /**
  @param appkey 应用程序appkey，需要向开发者后台申请
