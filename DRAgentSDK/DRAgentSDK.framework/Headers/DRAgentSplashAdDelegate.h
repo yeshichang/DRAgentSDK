@@ -2,7 +2,7 @@
 //  DRAgentSplashAdDelegate.h
 //  DRAgentSDK
 //
-//  Created by mac on 2018/1/23.
+//  Created by DRAgentSDK on 2018/1/23.
 //  Copyright © 2018年 DRAgentSDK. All rights reserved.
 //
 

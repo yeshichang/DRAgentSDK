@@ -2,7 +2,7 @@
 //  DRAgentBannerAdDelegate.h
 //  DRAgentSDK
 //
-//  Created by mac on 2018/1/22.
+//  Created by DRAgentSDK on 2018/1/22.
 //  Copyright © 2018年 DRAgentSDK. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 @required
 
 #pragma mark *** 数据 ***
+
 /**
  Banner广告数据加载成功
  
@@ -33,6 +34,7 @@
 @optional
 
 #pragma mark *** 点击 ***
+
 /**
  Banner广告点击
 

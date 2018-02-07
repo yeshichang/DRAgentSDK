@@ -2,7 +2,7 @@
 //  DRAgentRedEnvelopeView.h
 //  DRAgentSDK
 //
-//  Created by ShaoYueZhang on 2017/11/7.
+//  Created by DRAgentSDK on 2017/11/7.
 //  Copyright © 2017年 DRAgentSDK. All rights reserved.
 //
 // 
@@ -31,11 +31,11 @@
 /**
  关闭按钮字体颜色 默认:[UIColor grayColor]
  */
-@property (nonatomic, strong) UIColor  * closeButtonTitleColor;
+@property (nonatomic, strong) UIColor  *closeButtonTitleColor;
 
 /**
  关闭按钮字体大小 默认:[UIFont systemFontOfSize:10]
  */
-@property (nonatomic, strong) UIFont  * closeButtonTitleFont;
+@property (nonatomic, strong) UIFont  *closeButtonTitleFont;
 
 @end

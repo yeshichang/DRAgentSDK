@@ -16,7 +16,7 @@
 /**
  MessageThreeImages 代理
  */
-@property (nonatomic ,weak) id <DRAgentMessageThreeImagesAdDelegate> delegate;
+@property (nonatomic, weak) id <DRAgentMessageThreeImagesAdDelegate> delegate;
 
 /**
  @brief  初始化
@@ -26,7 +26,7 @@
 /**
  @brief  广告数据model
  */
-@property (nonatomic, strong) DRAgentAdvertDataModel * advertDataModel;
+@property (nonatomic, strong) DRAgentAdvertDataModel *advertDataModel;
 
 /**
  @brief  信息流小图自身高度

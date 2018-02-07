@@ -2,7 +2,7 @@
 //  DRAgentSplash.h
 //  DRAgentSDK
 //
-//  Created by mac on 2018/1/23.
+//  Created by DRAgentSDK on 2018/1/23.
 //  Copyright © 2018年 DRAgentSDK. All rights reserved.
 //
 
@@ -12,18 +12,18 @@
 
 @interface DRAgentSplash : NSObject
 
-@property (nonatomic ,weak) id <DRAgentSplashAdDelegate> delegate;
+@property (nonatomic, weak) id <DRAgentSplashAdDelegate> delegate;
 
 /*!
  @brief      显示倒计时按钮
  @discussion 默认值为YES
  */
-@property(nonatomic, assign)BOOL  showSplashscreenAdvertCountdown;
+@property(nonatomic, assign) BOOL showSplashscreenAdvertCountdown;
 
 /**
  尺寸
  */
-@property (nonatomic ,assign) CGRect splashFrame;
+@property (nonatomic, assign) CGRect splashFrame;
 
 /**
  初始化开屏广告类

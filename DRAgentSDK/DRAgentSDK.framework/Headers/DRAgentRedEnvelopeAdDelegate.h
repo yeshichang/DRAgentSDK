@@ -2,7 +2,7 @@
 //  DRAgentRedEnvelopeAdDelegate.h
 //  DRAgentSDK
 //
-//  Created by mac on 2018/1/22.
+//  Created by DRAgentSDK on 2018/1/22.
 //  Copyright © 2018年 DRAgentSDK. All rights reserved.
 //
 
@@ -13,6 +13,7 @@
 
 @optional
 #pragma mark *** 展示 点击 ***
+
 /**
  红包广告展示
  

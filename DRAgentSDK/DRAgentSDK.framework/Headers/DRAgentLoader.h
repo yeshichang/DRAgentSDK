@@ -2,7 +2,7 @@
 //  DRAgentLoader.h
 //  DRAgentSDK
 //
-//  Created by mac on 2018/1/22.
+//  Created by DRAgentSDK on 2018/1/22.
 //  Copyright © 2018年 DRAgentSDK. All rights reserved.
 //
 
@@ -31,7 +31,6 @@
  获取广告数据(原生广告)
  */
 - (void)loadNativeRequest;
-
 
 /**
  @brief  跳入网页视图

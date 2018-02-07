@@ -37,26 +37,30 @@
  @discussion 谨用:如果rootViewController(根视图控制器)父类不是UITabbarController或UINavigationController,必须设置当前显示广告界面的视图控制器导航
      [DRAgent sharedInstance].pushWebViewNavigationController =self.navigationController
  */
-@property(nonatomic, strong)UINavigationController * pushWebViewNavigationController;
-
+@property(nonatomic, strong) UINavigationController *pushWebViewNavigationController;
 
 /*!
  @brief      SDK中全局的网页视图减去的高度
  @discussion 默认为0
  */
-@property(nonatomic, assign) CGFloat  webViewSubtractHeight;
-
+@property(nonatomic, assign) CGFloat webViewSubtractHeight;
 
 /*!
  @brief      SDK中全局的导航背景色颜色
  @discussion 默认为自身APP导航颜色
  */
-@property(nonatomic, strong) UIColor * globalNavigationBarTintColor;
+@property(nonatomic, strong) UIColor *globalNavigationBarTintColor;
 
 /*!
  @brief      SDK中全局的导航title字体颜色
  @discussion 默认为[UIColor whiteColor]
  */
-@property(nonatomic, strong) UIColor * globalNavigationBarTitleColor;
+@property(nonatomic, strong) UIColor *globalNavigationBarTitleColor;
+
+/*!
+ @brief      SDK中开启定位功能
+ @discussion 默认为开启，根据自己应用情况设置定位功能
+ */
+@property (nonatomic, assign) BOOL openLocation;
 
 @end

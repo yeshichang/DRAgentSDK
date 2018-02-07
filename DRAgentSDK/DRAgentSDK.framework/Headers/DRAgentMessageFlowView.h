@@ -16,7 +16,7 @@
 /**
  MessageFlow 代理
  */
-@property (nonatomic ,weak) id <DRAgentMessageFlowAdDelegate> delegate;
+@property (nonatomic, weak) id <DRAgentMessageFlowAdDelegate> delegate;
 
 /**
  @brief  初始化

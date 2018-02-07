@@ -17,12 +17,12 @@
 /**
  关闭按钮是否展示 默认为YES展示
  */
-@property (nonatomic,assign) BOOL  isShowCloseButton;
+@property (nonatomic ,assign) BOOL isShowCloseButton;
 
 /**
  Banner 代理
  */
-@property (nonatomic ,weak) id <DRAgentBannerAdDelegate> delegate;
+@property (nonatomic, weak) id <DRAgentBannerAdDelegate> delegate;
 
 /**
  初始化BannerView
