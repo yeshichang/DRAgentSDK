@@ -16,19 +16,19 @@
 /**
  MessageFlow 代理
  */
-@property (nonatomic, weak) id <DRAgentMessageFlowAdDelegate> delegate;
+@property (nonatomic, weak, nullable) id <DRAgentMessageFlowAdDelegate> delegate;
 
 /**
  @brief  初始化
  @param  messageFlowViewType  信息流View类型
  */
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame
           messageFlowViewType:(IAdDataType)messageFlowViewType;
 
 /**
  @brief  广告数据model
  */
-@property (nonatomic, strong) DRAgentAdvertDataModel *advertDataModel;
+@property (nonatomic, strong, nonnull) DRAgentAdvertDataModel *advertDataModel;
 
 /**
  信息流小图文大图文自身高度

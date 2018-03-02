@@ -17,12 +17,12 @@
 /**
  关闭按钮是否展示 默认为YES展示
  */
-@property (nonatomic ,assign) BOOL isShowCloseButton;
+@property (nonatomic, assign) BOOL isShowCloseButton;
 
 /**
  Banner 代理
  */
-@property (nonatomic, weak) id <DRAgentBannerAdDelegate> delegate;
+@property (nonatomic, weak, nullable) id <DRAgentBannerAdDelegate> delegate;
 
 /**
  初始化BannerView
@@ -31,7 +31,7 @@
  @param adDataType          banner广告类型 (横幅广告  小横幅广告)
  @return                    该类BannerView
  */
-- (instancetype)initWithFrame:(CGRect)frame AdDataType:(IAdDataType)adDataType;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame AdDataType:(IAdDataType)adDataType;
 
 /**
  加载Banner数据

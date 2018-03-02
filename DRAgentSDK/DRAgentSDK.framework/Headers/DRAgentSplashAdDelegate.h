@@ -32,8 +32,7 @@
  */
 - (void)adSplash:(DRAgentSplash *)agentSplash didFailToReceiveAdWithError:(NSError *)error;
 
-
-#pragma mark *** 展示  点击 ***
+#pragma mark *** 展示 点击 ***
 
 /**
  开屏广告展示
@@ -49,7 +48,7 @@
  @param agentSplash agentSplash
  @param adverType 广告类型
  */
-- (void)adSplashDidClick:(DRAgentSplash *)agentSplash  adverType:(IAdDataType)adverType;
+- (void)adSplashDidClick:(DRAgentSplash *)agentSplash adverType:(IAdDataType)adverType;
 
 #pragma mark *** 返回 回调 ***
 

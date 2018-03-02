@@ -10,43 +10,44 @@
 
 @class DRAgentAdvertDataImageModel;
 
-/**
- 广告数据model
- */
+#pragma mark *** 广告数据model ***
+
+/** 广告数据model*/
 @interface DRAgentAdvertDataModel : NSObject
 
 /// 广告名字
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy, null_unspecified)   NSString *title;
 
 /// 广告id
-@property (nonatomic, copy) NSString *planid;
+@property (nonatomic, copy, null_unspecified)   NSString *planid;
 
 /// 广告图片数组
-@property (nonatomic, copy) NSArray <DRAgentAdvertDataImageModel *> *imagesDataArray;
+@property (nonatomic, copy, null_unspecified)   NSArray<DRAgentAdvertDataImageModel *> *imagesDataArray;
 
 /// 跳入链接
-@property (nonatomic, copy) NSString *gotourl;
+@property (nonatomic, copy, null_unspecified)   NSString *gotourl;
 
 /// 点弹
-@property (nonatomic, strong) NSNumber *pnum;
+@property (nonatomic, strong, null_unspecified) NSNumber *pnum;
 
 /// 广告类型
-@property (nonatomic, copy) NSString *adstypeid;
+@property (nonatomic, copy, null_unspecified)   NSString *adstypeid;
 
 /// 暗弹
-@property (nonatomic, strong) NSNumber *dktips;
+@property (nonatomic, strong, null_unspecified) NSNumber *dktips;
 
 @end
 
-/**
- 广告数据图片model
- */
+
+#pragma mark *** 广告数据图片model ***
+
+/** 广告数据图片model*/
 @interface DRAgentAdvertDataImageModel : NSObject
 
 /// 图片TJ
-@property (nonatomic, copy) NSString *imageTJ;
+@property (nonatomic, copy, null_unspecified) NSString *imageTJ;
 
 /// 图片地址
-@property (nonatomic, copy) NSString *imgurl;
+@property (nonatomic, copy, null_unspecified) NSString *imgurl;
 
 @end

@@ -12,13 +12,13 @@
 
 @interface DRAgentSplash : NSObject
 
-@property (nonatomic, weak) id <DRAgentSplashAdDelegate> delegate;
+@property (nonatomic, weak, nullable) id <DRAgentSplashAdDelegate> delegate;
 
 /*!
  @brief      显示倒计时按钮
  @discussion 默认值为YES
  */
-@property(nonatomic, assign) BOOL showSplashscreenAdvertCountdown;
+@property (nonatomic, assign) BOOL showSplashscreenAdvertCountdown;
 
 /**
  尺寸
@@ -31,7 +31,7 @@
  @param splashFrame 开屏广告尺寸
  @return 开屏广告类
  */
-- (instancetype)initWithFrame:(CGRect)splashFrame;
+- (instancetype _Nonnull)initWithFrame:(CGRect)splashFrame;
 
 /**
  加载开屏广告

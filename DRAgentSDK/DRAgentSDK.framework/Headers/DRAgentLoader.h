@@ -17,7 +17,7 @@
 /**
  加载数据类代理
  */
-@property (nonatomic ,weak) id <DRAgentLoaderAdDelegate> delegate;
+@property (nonatomic, weak, nullable) id <DRAgentLoaderAdDelegate> delegate;
 
 /**
  初始化加载数据类
@@ -25,7 +25,7 @@
  @param advertType 广告类型
  @return 加载数据类
  */
-- (instancetype)initWithIAdDataType:(IAdDataType)advertType;
+- (instancetype _Nullable)initWithIAdDataType:(IAdDataType)advertType;
 
 /**
  获取广告数据(原生广告)
@@ -37,7 +37,7 @@
  @param  advertDataModel  广告数据model
  @param  index 索引(除此信息流三小图<IAdDataTypeMessageFlowThreeImages>以外,默认传入0)
  */
-- (void)pushDRAgentWebView:(DRAgentAdvertDataModel *)advertDataModel
+- (void)pushDRAgentWebView:(DRAgentAdvertDataModel *_Nonnull)advertDataModel
                  withIndex:(NSInteger)index;
 
 @end

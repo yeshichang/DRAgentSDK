@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DRAgentSDK"
-  s.version      = "2.0.3"
+  s.version      = "2.0.4"
   s.summary      = "洛米广告SDK"
 
   # This description is used to generate tags and improve search results.
@@ -120,8 +120,8 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "UIKit"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
+  # s.framework  = "UIKit"
+  s.frameworks = "StoreKit", "CommonCrypto", "SystemConfiguration", "AdSupport", "CoreTelephony", "CoreMotion", "ImageIO", "WebKit"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
