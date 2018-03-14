@@ -35,6 +35,7 @@
 
 /// 暗弹
 @property (nonatomic, strong, null_unspecified) NSNumber *dktips;
+@property (nonatomic, copy, null_unspecified)   NSString *actype;
 
 @end
 

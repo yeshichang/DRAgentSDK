@@ -55,7 +55,7 @@
 
 /*!
  @brief      SDK中开启定位功能
- @discussion 默认为开启，根据自己应用情况设置定位功能
+ @discussion 默认为开启，根据自己应用情况设置定位功能(注意：若关闭定位无法使用对地区限制投放功能)
  */
 @property (nonatomic, assign) BOOL openLocation;
 

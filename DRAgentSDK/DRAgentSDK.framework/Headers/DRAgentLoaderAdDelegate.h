@@ -33,5 +33,14 @@
  */
 - (void)adLoader:(DRAgentLoader *)adLoader didFailToReceiveAdWithError:(NSError *)error;
 
+@optional
+
+/**
+ webView点击返回 (从webView返回广告控制器页面)
+
+ @param adLoader 加载数据类
+ */
+- (void)adLoaderWebViewReturn:(DRAgentLoader *)adLoader;
+
 @end
 
