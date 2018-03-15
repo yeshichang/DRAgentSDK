@@ -27,6 +27,7 @@
 #define kDRAgentSDKErrorCodeLimitFlowPort               16
 #define kDRAgentSDKErrorCodeLimitFlowOperator           17
 #define kDRAgentSDKErrorCodeTypeNoExistence             19
+#define kDRAgentSDKErrorCodeAPPABCRestrictedArea        21
 #define kDRAgentSDKErrorCodeRestrictedArea              22
 #define kDRAgentSDKErrorCodeAPPRestrictedArea           23
 
@@ -69,6 +70,7 @@ typedef NS_ENUM (NSInteger, DRAgentSDKErrorCode)
     DRAgentSDKErrorCodeLimitFlowPort            =       kDRAgentSDKErrorCodeLimitFlowPort,
     DRAgentSDKErrorCodeLimitFlowOperator        =       kDRAgentSDKErrorCodeLimitFlowOperator,
     DRAgentSDKErrorCodeTypeNoExistence          =       kDRAgentSDKErrorCodeTypeNoExistence,
+    DRAgentSDKErrorCodeAPPABCRestrictedArea     =       kDRAgentSDKErrorCodeAPPABCRestrictedArea,
     DRAgentSDKErrorCodeRestrictedArea           =       kDRAgentSDKErrorCodeRestrictedArea,
     DRAgentSDKErrorCodeAPPRestrictedArea        =       kDRAgentSDKErrorCodeAPPRestrictedArea,
 };
