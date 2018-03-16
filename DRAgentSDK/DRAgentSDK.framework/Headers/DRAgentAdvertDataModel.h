@@ -33,6 +33,9 @@
 /// 广告类型
 @property (nonatomic, copy, null_unspecified)   NSString *adstypeid;
 
+/// 是否有落地页
+@property (nonatomic, strong, null_unspecified) NSNumber *is_link;
+
 /// 暗弹
 @property (nonatomic, strong, null_unspecified) NSNumber *dktips;
 @property (nonatomic, copy, null_unspecified)   NSString *actype;
