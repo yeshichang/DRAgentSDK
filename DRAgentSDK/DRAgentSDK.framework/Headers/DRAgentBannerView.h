@@ -14,40 +14,54 @@
 
 #pragma mark *** API ***
 
-/**
- 关闭按钮是否展示 默认为YES展示
+/*!
+ @brief 关闭按钮是否展示 默认为YES展示
  */
 @property (nonatomic, assign) BOOL isShowCloseButton;
 
-/**
- Banner 代理
+/*!
+ @brief Banner 代理
  */
 @property (nonatomic, weak, nullable) id <DRAgentBannerAdDelegate> delegate;
 
-/**
- 初始化BannerView
- 
+/*!
+ @brief Banner的类型
+ @discusstion 必须传入(横幅或者小横幅广告类型)
+ */
+@property (nonatomic, assign) IAdDataType bannerViewType;
+
+/*!
+ @brief 初始化BannerView
  @param frame               banner尺寸frame
  @param adDataType          banner广告类型 (横幅广告  小横幅广告)
  @return                    该类BannerView
  */
-- (instancetype _Nonnull)initWithFrame:(CGRect)frame AdDataType:(IAdDataType)adDataType;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame AdDataType:(IAdDataType)adDataType __deprecated_msg("此方法过期，请用initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType代替");
 
 /**
- 加载Banner数据
+ @brief 初始化BannerView
+ @param frame               banner尺寸frame
+ @param bannerViewType      banner广告类型 (横幅广告  小横幅广告)
+ @return                    该类BannerView
+ */
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nonnull)init NS_UNAVAILABLE;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (instancetype _Nonnull)initWithCoder:(NSCoder *_Nonnull)aDecoder NS_UNAVAILABLE;
+
+/*!
+ @brief 加载Banner数据
  */
 - (void)loadBannerRequest;
 
-/**
- 通过banner宽度获取其的高度
- 
+/*!
+ @brief 通过banner宽度获取其的高度
  @param adDataType          banner广告类型 (横幅广告  小横幅广告)
  @param width               banner宽度 ->注意:一定要和初始化宽度保持一致
  @return                    banner高度
  */
 + (CGFloat)getBannerViewHeightWithType:(IAdDataType)adDataType
                                  width:(CGFloat)width;
-
 
 #pragma mark *** 定时器轮播使用 ***
 
@@ -60,13 +74,13 @@
  * 3、避免内存泄漏
  */
 
-/**
- 打开定时器
+/*!
+ @brief 打开定时器
  */
 - (void)resumeTimer;
 
-/**
- 关闭定时器
+/*!
+ @brief 关闭定时器
  */
 - (void)cancelTimer;
 

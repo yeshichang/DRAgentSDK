@@ -20,21 +20,21 @@
  */
 @property (nonatomic, assign) BOOL showSplashscreenAdvertCountdown;
 
-/**
- 尺寸
+/*!
+ @brief 尺寸
  */
 @property (nonatomic, assign) CGRect splashFrame;
 
-/**
- 初始化开屏广告类
-
+/*!
+ @brief 初始化开屏广告类
  @param splashFrame 开屏广告尺寸
  @return 开屏广告类
  */
-- (instancetype _Nonnull)initWithFrame:(CGRect)splashFrame;
+- (instancetype _Nonnull)initWithFrame:(CGRect)splashFrame NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nonnull)init NS_UNAVAILABLE;
 
-/**
- 加载开屏广告
+/*!
+ @brief 加载开屏广告
  */
 - (void)loadSplashRequest;
 

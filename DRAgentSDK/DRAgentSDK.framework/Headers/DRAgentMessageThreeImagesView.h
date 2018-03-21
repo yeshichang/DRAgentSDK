@@ -13,22 +13,26 @@
 @class DRAgentAdvertDataModel;
 @interface DRAgentMessageThreeImagesView : UIView
 
-/**
- MessageThreeImages 代理
+/*!
+ @brief MessageThreeImages 代理
  */
 @property (nonatomic, weak, nullable) id <DRAgentMessageThreeImagesAdDelegate> delegate;
 
-/**
- @brief  初始化
+/*!
+ @brief       初始化
+ @param frame 三小图位置尺寸
+ @return      三小图广告View
  */
-- (instancetype _Nonnull)initWithFrame:(CGRect)frame;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nonnull)init NS_UNAVAILABLE;
+- (instancetype _Nonnull)initWithCoder:(NSCoder *_Nonnull)aDecoder NS_UNAVAILABLE;
 
-/**
+/*!
  @brief  广告数据model
  */
 @property (nonatomic, strong, nonnull) DRAgentAdvertDataModel *advertDataModel;
 
-/**
+/*!
  @brief  信息流小图自身高度
  @param  width  宽度 ->注意:一定要和初始化宽度保持一致
  */

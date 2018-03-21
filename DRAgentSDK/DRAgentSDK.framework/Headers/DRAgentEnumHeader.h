@@ -9,6 +9,7 @@
 #ifndef DRAgentEnumHeader_h
 #define DRAgentEnumHeader_h
 
+/// DRAgentSDK  错误码
 #define kDRAgentSDKErrorCodeAdvertSuccess               0
 #define kDRAgentSDKErrorCodeEncryptFaild                1
 #define kDRAgentSDKErrorCodeAppkeyError                 2
@@ -34,8 +35,8 @@
 typedef NS_ENUM (NSInteger, IAdSuccessBack)
 {
     OnSuccess = 0,          // 广告加载成功
-    OnError,                // 广告失败
-    OnClick,                // 点击广告
+    OnError   = 1,          // 广告失败
+    OnClick   = 2,          // 点击广告
 };
 
 typedef NS_ENUM (NSInteger, IAdDataType)
@@ -49,7 +50,6 @@ typedef NS_ENUM (NSInteger, IAdDataType)
     IAdDataTypeRedEnvelope,               // 红包
 };
 
-// 自行添加错误码
 typedef NS_ENUM (NSInteger, DRAgentSDKErrorCode)
 {
     DRAgentSDKErrorCodeAdvertSuccess            =       kDRAgentSDKErrorCodeAdvertSuccess,

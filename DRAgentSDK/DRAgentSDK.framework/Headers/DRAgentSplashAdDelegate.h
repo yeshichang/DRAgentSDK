@@ -16,17 +16,15 @@
 
 #pragma mark *** 数据 ***
 
-/**
- 开屏广告数据加载缓存成功
- 
+/*!
+ @brief 开屏广告数据加载缓存成功
  @param agentSplash agentSplash
  @param adverType 广告类型
  */
 - (void)adSplashDidFinishLoading:(DRAgentSplash *)agentSplash adverType:(IAdDataType)adverType;
 
-/**
- 开屏广告数据加载缓存失败
- 
+/*!
+ @brief 开屏广告数据加载缓存失败
  @param agentSplash agentSplash
  @param error 错误error
  */
@@ -34,17 +32,15 @@
 
 #pragma mark *** 展示 点击 ***
 
-/**
- 开屏广告展示
-
+/*!
+ @brief 开屏广告展示
  @param agentSplash agentSplash
  @param adverType 广告类型
  */
 - (void)adSplashshowed:(DRAgentSplash *)agentSplash adverType:(IAdDataType)adverType;
 
-/**
- 开屏广告点击
-
+/**!
+ @brief 开屏广告点击
  @param agentSplash agentSplash
  @param adverType 广告类型
  */
@@ -52,18 +48,22 @@
 
 #pragma mark *** 返回 回调 ***
 
-/**
- 广告视图消失 (返回主控制器)
-
+/*!
+ @brief 广告视图消失 (返回主控制器)
  @param agentSplash agentSplash
  */
 - (void)adSplashscreenDismiss:(DRAgentSplash *)agentSplash;
 
-/**
- webView点击返回 (从webView返回广告控制器页面)
-
+/*!
+ @brief webView点击返回 注:(有落地页，跳入webView，从webView返回广告控制器页面)
  @param agentSplash agentSplash
  */
 - (void)adSplashWebViewReturn:(DRAgentSplash *)agentSplash;
+
+/*!
+ @brief storekit中点击完成返回 注:(没有落地页，直接跳转storeVC，从storeVC返回广告控制器页面)
+ @param agentSplash agentSplash
+ */
+- (void)adSplashStoreProductViewControllerReturn:(DRAgentSplash *)agentSplash;
 
 @end

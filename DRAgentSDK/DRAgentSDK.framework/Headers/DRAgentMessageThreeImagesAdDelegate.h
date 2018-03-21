@@ -15,20 +15,24 @@
 
 #pragma mark *** 点击 ***
 
-/**
- 三小图广告点击
- 
+/*!
+ @brief 三小图广告点击
  @param messageThreeImagesView messageThreeImagesView
  @param adverType 广告类型
  */
 - (void)adMessageThreeImagesDidClick:(DRAgentMessageThreeImagesView *)messageThreeImagesView
                            adverType:(IAdDataType)adverType;
 
-/**
- webView点击返回 (从webView返回广告控制器页面)
-
+/*!
+ @brief webView点击返回 注:(有落地页，跳入webView，从webView返回广告控制器页面)
  @param messageThreeImagesView messageThreeImagesView
  */
 - (void)adMessageThreeImagesWebViewReturn:(DRAgentMessageThreeImagesView *)messageThreeImagesView;
+
+/*!
+ @brief storekit中点击完成返回 注:(没有落地页，直接跳转storeVC，从storeVC返回广告控制器页面)
+ @param messageThreeImagesView messageThreeImagesView
+ */
+- (void)adMessageThreeImagesStoreProductViewControllerReturn:(DRAgentMessageThreeImagesView *)messageThreeImagesView;
 
 @end
