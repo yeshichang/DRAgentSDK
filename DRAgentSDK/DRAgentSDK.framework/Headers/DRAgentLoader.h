@@ -24,7 +24,15 @@
  @param advertType 广告类型
  @return 加载数据类
  */
-- (instancetype _Nullable)initWithIAdDataType:(IAdDataType)advertType NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nullable)initWithIAdDataType:(IAdDataType)advertType;
+
+/*!
+ @brief 加载数据类代理
+ @param advertType 广告类型
+ @param delegate 代理
+ @return 加载数据类
+ */
+- (instancetype _Nullable)initWithIAdDataType:(IAdDataType)advertType delegate:(id _Nullable)delegate NS_DESIGNATED_INITIALIZER;
 - (instancetype _Nullable)init NS_UNAVAILABLE;
 
 /*!

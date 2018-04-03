@@ -30,7 +30,17 @@
  @return 图文广告View
  */
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame
-          messageFlowViewType:(IAdDataType)messageFlowViewType NS_DESIGNATED_INITIALIZER;
+                   messageFlowViewType:(IAdDataType)messageFlowViewType;
+
+/*!
+ @brief  初始化
+ @param  messageFlowViewType  信息流View类型 (信息流大图文或者信息流小图文)
+ @param  delegate             代理
+ @return 图文广告View
+ */
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                   messageFlowViewType:(IAdDataType)messageFlowViewType
+                               delegae:(id _Nullable)delegate NS_DESIGNATED_INITIALIZER;
 - (instancetype _Nonnull)init NS_UNAVAILABLE;
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype _Nonnull)initWithCoder:(NSCoder *_Nonnull)aDecoder NS_UNAVAILABLE;

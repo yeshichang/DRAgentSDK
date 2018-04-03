@@ -38,13 +38,22 @@
  */
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame AdDataType:(IAdDataType)adDataType __deprecated_msg("此方法过期，请用initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType代替");
 
-/**
+/*!
  @brief 初始化BannerView
  @param frame               banner尺寸frame
  @param bannerViewType      banner广告类型 (横幅广告  小横幅广告)
  @return                    该类BannerView
  */
-- (instancetype _Nonnull)initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType;
+
+/*!
+ @brief 初始化BannerView
+ @param frame               banner尺寸frame
+ @param bannerViewType      banner广告类型 (横幅广告  小横幅广告)
+ @param delegate            代理
+ @return                    该类BannerView
+ */
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType delegate:(id _Nullable)delegate NS_DESIGNATED_INITIALIZER;
 - (instancetype _Nonnull)init NS_UNAVAILABLE;
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype _Nonnull)initWithCoder:(NSCoder *_Nonnull)aDecoder NS_UNAVAILABLE;

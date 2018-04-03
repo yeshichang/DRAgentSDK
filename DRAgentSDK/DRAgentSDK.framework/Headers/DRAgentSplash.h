@@ -30,7 +30,15 @@
  @param splashFrame 开屏广告尺寸
  @return 开屏广告类
  */
-- (instancetype _Nonnull)initWithFrame:(CGRect)splashFrame NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nonnull)initWithFrame:(CGRect)splashFrame;
+
+/*!
+ @brief 初始化开屏广告类
+ @param splashFrame 开屏广告尺寸
+ @param delegate 代理
+ @return 开屏广告类
+ */
+- (instancetype _Nonnull)initWithFrame:(CGRect)splashFrame delegate:(id _Nullable)delegate NS_DESIGNATED_INITIALIZER;
 - (instancetype _Nonnull)init NS_UNAVAILABLE;
 
 /*!

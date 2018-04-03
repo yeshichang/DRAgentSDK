@@ -18,12 +18,13 @@
  */
 @property (nonatomic, weak, nullable) id <DRAgentMessageThreeImagesAdDelegate> delegate;
 
-/*!
- @brief       初始化
- @param frame 三小图位置尺寸
- @return      三小图广告View
+/**
+ @brief             初始化
+ @param frame       三小图位置尺寸
+ @param delegate    代理
+ @return            三小图广告View
  */
-- (instancetype _Nonnull)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame delegate:(id _Nullable)delegate NS_DESIGNATED_INITIALIZER;
 - (instancetype _Nonnull)init NS_UNAVAILABLE;
 - (instancetype _Nonnull)initWithCoder:(NSCoder *_Nonnull)aDecoder NS_UNAVAILABLE;
 

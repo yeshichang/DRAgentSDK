@@ -41,13 +41,15 @@ typedef NS_ENUM (NSInteger, IAdSuccessBack)
 
 typedef NS_ENUM (NSInteger, IAdDataType)
 {
-    IAdDataTypeFullScreen,                // 全屏
-    IAdDataTypeBannerLow,                 // 横幅(banner)低
-    IAdDataTypeBanner,                    // 横幅(banner)
-    IAdDataTypeMessageFlowThreeImages,    // 信息流三小图
-    IAdDataTypeMessageFlowSmallImage,     // 信息流广告小图
-    IAdDataTypeMessageFlowBigImage,       // 信息流广告大图
-    IAdDataTypeRedEnvelope,               // 红包
+    IAdDataTypeFullScreen,                      // 全屏
+    IAdDataTypeBannerLow,                       // 横幅(banner)低
+    IAdDataTypeBanner,                          // 横幅(banner)
+    IAdDataTypeMessageFlowThreeImages,          // 信息流三小图
+    IAdDataTypeMessageFlowSmallImage,           // 信息流广告小图
+    IAdDataTypeMessageFlowSmallImageVertical,   // 信息流广告小图竖图(仅适用于原生广告)
+    IAdDataTypeMessageFlowBigImage,             // 信息流广告大图
+    IAdDataTypeMessageFlowBigImageVertical,     // 信息流广告大图竖图(仅适用于原生广告)
+    IAdDataTypeRedEnvelope                      // 红包广告
 };
 
 typedef NS_ENUM (NSInteger, DRAgentSDKErrorCode)
