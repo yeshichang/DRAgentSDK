@@ -26,7 +26,7 @@
 
 /*!
  @brief Banner的类型
- @discusstion 必须传入(横幅或者小横幅广告类型)
+ @discussion 必须传入(横幅或者小横幅广告类型)
  */
 @property (nonatomic, assign) IAdDataType bannerViewType;
 
@@ -36,7 +36,8 @@
  @param adDataType          banner广告类型 (横幅广告  小横幅广告)
  @return                    该类BannerView
  */
-- (instancetype _Nonnull)initWithFrame:(CGRect)frame AdDataType:(IAdDataType)adDataType __deprecated_msg("此方法过期，请用initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType代替");
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                            AdDataType:(IAdDataType)adDataType __deprecated_msg("方法过期，请用initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType代替");
 
 /*!
  @brief 初始化BannerView
@@ -44,7 +45,8 @@
  @param bannerViewType      banner广告类型 (横幅广告  小横幅广告)
  @return                    该类BannerView
  */
-- (instancetype _Nonnull)initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                        bannerViewType:(IAdDataType)bannerViewType;
 
 /*!
  @brief 初始化BannerView
@@ -53,7 +55,9 @@
  @param delegate            代理
  @return                    该类BannerView
  */
-- (instancetype _Nonnull)initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType delegate:(id _Nullable)delegate NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame
+                        bannerViewType:(IAdDataType)bannerViewType
+                              delegate:(id _Nullable)delegate NS_DESIGNATED_INITIALIZER;
 - (instancetype _Nonnull)init NS_UNAVAILABLE;
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype _Nonnull)initWithCoder:(NSCoder *_Nonnull)aDecoder NS_UNAVAILABLE;

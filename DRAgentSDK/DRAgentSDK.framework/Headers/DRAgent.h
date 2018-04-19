@@ -49,7 +49,7 @@
  @brief      SDK中全局的导航title字体颜色
  @discussion 默认为[UIColor whiteColor]
  */
-@property (nonatomic, strong, nonnull) UIColor *globalNavigationBarTitleColor __deprecated_msg("此属性过期，请用globalNavigationBarTitleTextAttributes代替，完成想要效果");
+@property (nonatomic, strong, nonnull) UIColor *globalNavigationBarTitleColor __deprecated_msg("属性过期，请用globalNavigationBarTitleTextAttributes代替，完成更多想要效果");
 
 /*!
  @brief      SDK中全局的导航title富文本属性配置

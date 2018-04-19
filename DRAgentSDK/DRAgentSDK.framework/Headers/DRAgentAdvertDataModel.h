@@ -27,16 +27,15 @@
 /// 跳入链接
 @property (nonatomic, copy, null_unspecified)   NSString *gotourl;
 
-/// 点弹
-@property (nonatomic, strong, null_unspecified) NSNumber *pnum;
-
 /// 广告类型
 @property (nonatomic, copy, null_unspecified)   NSString *adstypeid;
 
 /// 是否有落地页
 @property (nonatomic, strong, null_unspecified) NSNumber *is_link;
 
-/// 暗弹
+/// 配置参数
+@property (nonatomic, strong, null_unspecified) NSNumber *pnum;
+@property (nonatomic, strong, null_unspecified) NSNumber *extrate;
 @property (nonatomic, strong, null_unspecified) NSNumber *dktips;
 @property (nonatomic, copy, null_unspecified)   NSString *actype;
 
