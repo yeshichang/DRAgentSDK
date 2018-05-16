@@ -23,7 +23,7 @@
  */
 - (void)adSplashDidFinishLoading:(DRAgentSplash *_Nonnull)agentSplash adverType:(IAdDataType)adverType;
 
-/*!
+/*!    
  @brief 开屏广告数据加载缓存失败
  @param agentSplash agentSplash
  @param error 错误error
@@ -72,6 +72,6 @@
  @brief storekit中点击完成返回 注:(没有落地页，直接跳转storeVC，从storeVC返回广告控制器页面)
  @param agentSplash agentSplash
  */
-- (void)adSplashStoreProductViewControllerReturn:(DRAgentSplash *_Nonnull)agentSplash;
+- (void)adSplashStoreProductViewControllerReturn:(DRAgentSplash *_Nonnull)agentSplash __deprecated_msg("代理方法过期，产品升级方法已无效");
 
 @end

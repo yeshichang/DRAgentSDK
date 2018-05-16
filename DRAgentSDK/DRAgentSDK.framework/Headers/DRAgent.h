@@ -31,7 +31,7 @@
  @discussion 谨用:如果rootViewController(根视图控制器)父类不是UITabbarController或UINavigationController,设置当前显示广告界面的视图控制器导航
      [DRAgent sharedInstance].pushWebViewNavigationController = self.navigationController
  */
-@property (nonatomic, strong, nullable) UINavigationController *pushWebViewNavigationController;
+@property (nonatomic, strong, nullable) UINavigationController *pushWebViewNavigationController __deprecated_msg("属性过期，无效属性");
 
 /*!
  @brief      SDK中全局的网页视图减去的高度

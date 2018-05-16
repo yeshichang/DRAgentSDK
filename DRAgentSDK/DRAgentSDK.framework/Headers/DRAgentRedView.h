@@ -18,21 +18,6 @@
 /// DRAgentRedView 代理
 @property (nonatomic, weak, nullable) id <DRAgentRedAdDelegate> delegate;
 
-/// 关闭按钮 默认:展示YES
-@property (nonatomic, assign) BOOL isShowCloseButton;
-
-/*!
- @brief         关闭按钮字体颜色 默认:[UIColor grayColor]
- @discussion    默认:[UIColor grayColor]
- */
-@property (nonatomic, strong, nonnull) UIColor *closeButtonTitleColor;
-
-/*!
- @brief         关闭按钮字体大小
- @discussion    默认:[UIFont systemFontOfSize:13]
- */
-@property (nonatomic, strong, nonnull) UIFont *closeButtonTitleFont;
-
 /**
  @brief 初始化红包View
  @param frame frame
@@ -57,6 +42,22 @@
 /// 动画 默认:开启YES
 @property (nonatomic, assign) BOOL isAnimation;
 
+/// 关闭按钮 默认:展示YES
+@property (nonatomic, assign) BOOL isShowCloseButton;
+
+/*!
+ @brief         关闭按钮字体颜色 默认:[UIColor grayColor]
+ @discussion    默认:[UIColor grayColor]
+ */
+@property (nonatomic, strong, nonnull) UIColor *closeButtonTitleColor;
+
+/*!
+ @brief         关闭按钮字体大小
+ @discussion    默认:[UIFont systemFontOfSize:13]
+ */
+@property (nonatomic, strong, nonnull) UIFont *closeButtonTitleFont;
+
+
 @end
 
 // ************************************ 华丽的分割线 ********************************** //
@@ -67,6 +68,12 @@
 @interface DRAgentRedVideoView : DRAgentRedView
 
 @property (nonatomic, weak, nullable) id <DRAgentRedVideoAdDelegate> delegate;
+
+/*!
+ * @brief  手动调起视频红包按钮进入视频广告界面
+ * @discussion  在需求界面可以通过其他事件去调起点击视频红包 加载 并弹出视频界面 (和点击红包按钮为同一事件)
+ */
+- (void)clickRedVideoViewAction;
 
 @end
 

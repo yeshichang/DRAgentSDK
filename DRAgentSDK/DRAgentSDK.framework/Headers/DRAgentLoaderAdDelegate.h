@@ -43,7 +43,7 @@
  @brief storekit中点击完成返回 注:(没有落地页，直接跳转storeVC，从storeVC返回广告控制器页面)
  @param adLoader adLoader
  */
-- (void)adLoaderStoreProductViewControllerReturn:(DRAgentLoader *_Nonnull)adLoader;
+- (void)adLoaderStoreProductViewControllerReturn:(DRAgentLoader *_Nonnull)adLoader __deprecated_msg("代理方法过期，产品升级方法已无效");
 
 @end
 
