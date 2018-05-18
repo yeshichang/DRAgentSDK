@@ -70,6 +70,12 @@
 @property (nonatomic, weak, nullable) id <DRAgentRedVideoAdDelegate> delegate;
 
 /*!
+ * @brief  切换红包标识icon图标
+ * @discussion  可根据需求设置时间段内控制更换icon图标(icon更换为随机)
+ */
+- (void)replaceRedVideoViewImage;
+
+/*!
  * @brief  手动调起视频红包按钮进入视频广告界面
  * @discussion  在需求界面可以通过其他事件去调起点击视频红包 加载 并弹出视频界面 (和点击红包按钮为同一事件)
  */
