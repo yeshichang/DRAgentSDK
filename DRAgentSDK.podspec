@@ -120,11 +120,9 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "UIKit"
-  s.frameworks = "MobileCoreServices", "CoreMedia", "CoreData", "CoreTelephony", "SystemConfiguration", "CoreMotion", "StoreKit", "AdSupport", "WebKit", "CoreLocation"
+  # s.frameworks = "MobileCoreServices", "CoreMedia", "CoreData", "CoreTelephony", "SystemConfiguration", "CoreMotion", "StoreKit", "AdSupport", "WebKit", "CoreLocation", "CoreGraphics", "ImageIO", "QuartzCore", "Security", "MapKit"
 
-  # s.library   = "iconv"
-  s.libraries = "sqlite3"
+  # s.libraries = "sqlite3"
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
