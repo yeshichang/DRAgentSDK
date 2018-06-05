@@ -54,3 +54,34 @@
 @property (nonatomic, copy, null_unspecified) NSString *imgurl;
 
 @end
+
+
+// ************************************ 华丽的分割线 ********************************** //
+
+/** 激励视频广告数据model */
+@interface DRAgentExcitingVideoDataModel : NSObject
+
+/// 视频标题
+@property (nonatomic, copy, null_unspecified)   NSString *title;
+/// 视频内容
+@property (nonatomic, copy, null_unspecified)   NSString *content;
+/// 图片地址
+@property (nonatomic, copy, null_unspecified)   NSString *imgurl;
+/// 视频地址
+@property (nonatomic, copy, null_unspecified)   NSString *videourl;
+/// 广告id
+@property (nonatomic, copy, null_unspecified)   NSString *planid;
+/// 跳入链接
+@property (nonatomic, copy, null_unspecified)   NSString *gotourl;
+
+@property (nonatomic, strong, null_unspecified) NSNumber *pnum;
+@property (nonatomic, strong, null_unspecified) NSNumber *extrate;
+@property (nonatomic, copy, null_unspecified)   NSString *adstypeid;
+@property (nonatomic, strong, null_unspecified) NSNumber *dktips;
+@property (nonatomic, copy, null_unspecified)   NSString *getImageTJ;
+@property (nonatomic, strong, null_unspecified) NSNumber *is_link;
+@property (nonatomic, copy, null_unspecified)   NSString *weight;
+@property (nonatomic, copy, null_unspecified)   NSString *actype;
+
+@end
+

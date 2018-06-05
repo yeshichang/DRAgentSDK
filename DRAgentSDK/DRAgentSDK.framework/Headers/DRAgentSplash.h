@@ -25,6 +25,12 @@
  */
 @property (nonatomic, assign) CGRect splashFrame;
 
+/**
+ @brief 拉取广告超时时间，默认为3秒  [1 ~ +∞]  如需设置最好设置3秒以上提高广告展示几率
+ @discussion 拉取广告超时时间，开发者调用loadSplashRequest方法以后会立即展示启动页图片，然后在该超时时间内，如果广告拉 取成功，则立马展示开屏广告，否则放弃此次广告展示机会。
+ */
+@property (nonatomic, assign) NSTimeInterval fetchDelay;
+
 /*!
  @brief 初始化开屏广告类
  @param splashFrame 开屏广告尺寸

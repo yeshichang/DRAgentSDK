@@ -90,6 +90,14 @@
                          reciveAdWithError:(NSError *_Nullable)error;
 
 /*!
+ @brief 视频红包图标加载成功后回调图标标题
+ @discussion [可选]广告数据渲染完毕，可自行添加UILabel显示icon标题。
+                自定义配置这个标题
+ @param iconTitle 图标标题
+ */
+- (void)adRedVideoImageIconLoadingFinished:(NSString *)iconTitle;
+
+/*!
  @brief 加载视频数据成功或者失败   注意: 是视频数据加载 (当点击红包present 出来视频控制器时 会走该回调)
  @discussion 成功状态：error = nil;  失败状态有error信息
  @param redVideoView redVideoView
