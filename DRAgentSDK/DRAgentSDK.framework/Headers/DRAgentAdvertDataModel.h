@@ -18,9 +18,6 @@
 /// 广告名字
 @property (nonatomic, copy, null_unspecified)   NSString *title;
 
-/// 广告内容
-@property (nonatomic, copy, null_unspecified)   NSString *content;
-
 /// 广告id
 @property (nonatomic, copy, null_unspecified)   NSString *planid;
 
@@ -62,7 +59,7 @@
 // ************************************ 华丽的分割线 ********************************** //
 
 /** 激励视频广告数据model */
-@interface DRAgentExcitingVideoDataModel : NSObject <NSCoding>
+@interface DRAgentExcitingVideoDataModel : NSObject
 
 /// 视频标题
 @property (nonatomic, copy, null_unspecified)   NSString *title;
@@ -85,7 +82,6 @@
 @property (nonatomic, strong, null_unspecified) NSNumber *is_link;
 @property (nonatomic, copy, null_unspecified)   NSString *weight;
 @property (nonatomic, copy, null_unspecified)   NSString *actype;
-@property (nonatomic, copy, null_unspecified)   NSNumber *errrate;
 
 @end
 

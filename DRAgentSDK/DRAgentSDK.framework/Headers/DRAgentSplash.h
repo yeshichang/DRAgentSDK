@@ -18,13 +18,7 @@
  @brief      显示倒计时按钮
  @discussion 默认值为YES
  */
-@property (nonatomic, assign) BOOL showSplashscreenAdvertCountdown __deprecated_msg("该属性已经过期");
-
-/*!
- @brief      当开屏广告为视频时，是否播放声音
- @discussion 默认值为YES，播放音频
- */
-@property (nonatomic, assign) BOOL muted;
+@property (nonatomic, assign) BOOL showSplashscreenAdvertCountdown;
 
 /*!
  @brief 尺寸

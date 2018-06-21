@@ -91,7 +91,7 @@
 - (void)clearDRAgentSDKMemory;
 
 /*!
- @brief 清除DRAgentSDK图片和视频磁盘缓存
+ @brief 清除DRAgentSDK图片磁盘缓存
  */
 - (void)clearDRAgentSDKDisk;
 

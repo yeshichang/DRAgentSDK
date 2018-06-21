@@ -59,7 +59,6 @@ typedef NS_ENUM (NSInteger, IAdSuccessBack)
  - IAdDataTypeMessageFlowBigImageVertical: 信息流广告大图竖图(仅适用于原生广告)
  - IAdDataTypeRedEnvelope: 红包广告
  - IAdDataTypeRedVideo: 红包视频广告
- - IAdDataTypeSmallImage: 小图文
  */
 typedef NS_ENUM (NSInteger, IAdDataType)
 {
@@ -72,8 +71,7 @@ typedef NS_ENUM (NSInteger, IAdDataType)
     IAdDataTypeMessageFlowBigImage,
     IAdDataTypeMessageFlowBigImageVertical,
     IAdDataTypeRedEnvelope,
-    IAdDataTypeRedVideo,
-    IAdDataTypeSmallImage
+    IAdDataTypeRedVideo
 };
 
 typedef NS_ENUM (NSInteger, DRAgentSDKErrorCode)
