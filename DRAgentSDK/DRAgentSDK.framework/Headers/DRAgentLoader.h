@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "DRAgentEnumHeader.h"
 #import "DRAgentLoaderAdDelegate.h"
 
@@ -71,14 +70,14 @@
 /**
  DRAgentExcitingVideoLoaderAdDelegate
  */
-@property (nonatomic, weak) id <DRAgentExcitingVideoLoaderAdDelegate> videoDelegate;
+@property (nonatomic, weak) id <DRAgentExcitingVideoLoaderAdDelegate>videoDelegate;
 
 /*!
  @brief 初始化激励视频广告加载类
  @param videoDelegate videoDelegate
  @return 加载类
  */
-- (instancetype _Nullable)initWithDelegate:(id <DRAgentExcitingVideoLoaderAdDelegate> _Nullable)videoDelegate;
+- (instancetype _Nullable)initWithDelegate:(id <DRAgentExcitingVideoLoaderAdDelegate>_Nullable)videoDelegate;
 
 /*!
  @brief 获取激励视频广告数据(原生广告)
