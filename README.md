@@ -83,17 +83,17 @@ splash.delegate = self;
 ```
 typedef NS_ENUM (NSInteger, IAdDataType)
 {
-    IAdDataTypeFullScreen,                      	// 开屏(不适用于原生广告)
-    IAdDataTypeBannerLow,                       	// 小横幅(不适用于原生广告)
-    IAdDataTypeBanner,                          	// 横幅(不适用于原生广告)
-    IAdDataTypeMessageFlowThreeImages,          	// 信息流三小图(适用于原生广告)
-    IAdDataTypeMessageFlowSmallImage,           	// 信息流广告小图(适用于原生广告)
-    IAdDataTypeMessageFlowSmallImageVertical,    // 信息流广告小图竖图(仅适用于原生广告)
-    IAdDataTypeMessageFlowBigImage,             	// 信息流广告大图(适用于原生广告)
-    IAdDataTypeMessageFlowBigImageVertical,      // 信息流广告大图竖图(仅适用于原生广告)
-    IAdDataTypeRedEnvelope,                      // 红包广告(不适用于原生广告)
-    IAdDataTypeRedVideo,					 	                  // 视频广告(不适用于原生广告)
-    IAdDataTypeSmallImage						                  // 小图文(仅适用于原生广告)
+    IAdDataTypeFullScreen,                      // 开屏(不适用于原生广告)
+    IAdDataTypeBannerLow,                       // 小横幅(不适用于原生广告)
+    IAdDataTypeBanner,                          // 横幅(不适用于原生广告)
+    IAdDataTypeMessageFlowThreeImages,          // 信息流三小图(适用于原生广告)
+    IAdDataTypeMessageFlowSmallImage,           // 信息流广告小图(适用于原生广告)
+    IAdDataTypeMessageFlowSmallImageVertical,   // 信息流广告小图竖图(仅适用于原生广告)
+    IAdDataTypeMessageFlowBigImage,             // 信息流广告大图(适用于原生广告)
+    IAdDataTypeMessageFlowBigImageVertical,     // 信息流广告大图竖图(仅适用于原生广告)
+    IAdDataTypeRedEnvelope,                     // 红包广告(不适用于原生广告)
+    IAdDataTypeRedVideo,                        // 视频广告(不适用于原生广告)
+    IAdDataTypeSmallImage                       // 小图文(仅适用于原生广告)
 };
 ```
 - 广告初始、加载数据、跳转点击
