@@ -4,9 +4,12 @@
 ***注：在您阅读此文档时，我们假定您已经具备了基础的iOS 应用开发经  验，并能够理解相关基础概念，SDK支持iOS8及以上iOS版本。***
 - 申请APPkey，在[洛米官方网站](http://www.luomi.com/)网站中注册成为开发者并创建一款应用，您将获得一个appkey，用于标识您的应用。
 - 下载并导入SDK
+
 1、通过Cocoapods 下载地址： SDK1.8.4版本开始支持pod管理：
-·`pod 'DRAgentSDK'`引用时`#import<DRAgentSDK/DRAgentSDK.h>`
+
+`pod 'DRAgentSDK'`引用时`#import<DRAgentSDK/DRAgentSDK.h>`
 如果项目支持cocoapods管理，请使用cocoapods导入SDK，能获取最新的SDK，方便管理。
+
 2、 通过[官方平台](http://www.luomi.com/document.php)下载SDK以及demo和对接文档。下载最新版的LMAgentSDK.framework.zip后解压得到`DRAgentSDK.framework `添加到项目中，然后添加资源库 `DRAgentSDKBundle.bundle`
 
 ![image.jpeg](https://upload-images.jianshu.io/upload_images/2917199-49b19377fd5451e4.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
