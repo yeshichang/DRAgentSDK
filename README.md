@@ -1,5 +1,5 @@
-#DRAgentSDK使用说明  
-##概述
+# DRAgentSDK使用说明  
+## 概述
 欢迎使用洛米广告平台。通过本文档，您可以在几分钟之内轻松完成移动广告的集成过程。
 ***注：在您阅读此文档时，我们假定您已经具备了基础的iOS 应用开发经  验，并能够理解相关基础概念，SDK支持iOS8及以上iOS版本。***
 - 申请APPkey，在[洛米官方网站](http://www.luomi.com/)网站中注册成为开发者并创建一款应用，您将获得一个appkey，用于标识您的应用。
@@ -8,10 +8,16 @@
 ·`pod 'DRAgentSDK'`引用时`#import<DRAgentSDK/DRAgentSDK.h>`
 如果项目支持cocoapods管理，请使用cocoapods导入SDK，能获取最新的SDK，方便管理。
 2、 通过[官方平台](http://www.luomi.com/document.php)下载SDK以及demo和对接文档。下载最新版的LMAgentSDK.framework.zip后解压得到`DRAgentSDK.framework `添加到项目中
-![image.jpeg](https://upload-images.jianshu.io/upload_images/2917199-49b19377fd5451e4.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)然后添加资源库 `DRAgentSDKBundle.bundle`
+
+![image.jpeg](https://upload-images.jianshu.io/upload_images/2917199-49b19377fd5451e4.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+然后添加资源库 `DRAgentSDKBundle.bundle`
+
 ![image.jpeg](https://upload-images.jianshu.io/upload_images/2917199-486adbe547346fd5.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 - 配置other linker flags添加-ObjC
+
 ![image.png](https://upload-images.jianshu.io/upload_images/2917199-a140937d1f3ac2d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 - 配置HTTP
 SDK中用到HTTP请求，苹果在iOS9推出支持HTTP请求时求配置info.plist文件。
 - 配置定位
@@ -23,23 +29,24 @@ SDK中用到HTTP请求，苹果在iOS9推出支持HTTP请求时求配置info.pli
  */
 @property (nonatomic, assign) BOOL openLocation;
 ```
-##代码使用
-###1、开屏广告
+## 代码使用
+### 1、开屏广告
+
 ![splash.gif](https://upload-images.jianshu.io/upload_images/2917199-213917edae4770c5.gif?imageMogr2/auto-orient/strip)
 
 - 在 AppDelegate.m中 入口方法:
 `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`  中, 初始化中设置开启开屏广告 
 - 在入口方法中先设置根试图在此` [self.window makeKeyAndVisible] `方法下面添加开屏广告。**如若不在此方法下，开屏广告将不会出现**
 ```
-    DRAgentSplash *splash = [[DRAgentSplash alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    // 设置拉取广告时间(超时则取消开屏广告，视为广告展示失败)
-    splash.fetchDelay = 3;
-    // 设置开屏广告当有视频播放时是否静音(默认YES不静音)
-    splash.muted = YES;
-    // 设置代理
-    splash.delegate = self;
-    // 加载开屏广告
-    [splash loadSplashRequest];
+DRAgentSplash *splash = [[DRAgentSplash alloc] initWithFrame:[UIScreen mainScreen].bounds];
+// 设置拉取广告时间(超时则取消开屏广告，视为广告展示失败)
+splash.fetchDelay = 3;
+// 设置开屏广告当有视频播放时是否静音(默认YES不静音)
+splash.muted = YES;
+// 设置代理
+splash.delegate = self;
+// 加载开屏广告
+[splash loadSplashRequest];
 ```
 - 高级使用，*以下为开屏广告的回调代理。*
 ```
@@ -66,7 +73,8 @@ SDK中用到HTTP请求，苹果在iOS9推出支持HTTP请求时求配置info.pli
     NSLog(@"从广告webView返回");
 }
 ```
-###2、原生广告
+### 2、原生广告
+
 原生广告用于信息流广告，小图文cpv广告。
 首先实例化数据请求类`DRAgentLoader`的对象，请求广告数。实现代理方法拿到数据后，自定义构建广告View添加到要展示广告的前端页面上，在广告页面中添加手势或点击事件，在点击事件中调用SDK的原生广告点击跳转方法`- (void)clickNativeAd:(id _Nonnull)dataModel;`
 **其中，SDK有封装定义好的信息流三小图View`DRAgentMessageThreeImagesView`和信息流大小图文的View`DRAgentMessageFlowView`，可以直接拿到View直接使用，且不用实现跳转方法。使用封装好的自定义信息流View自定义程度不高。**
@@ -81,12 +89,12 @@ typedef NS_ENUM (NSInteger, IAdDataType)
     IAdDataTypeBanner,                          	// 横幅(不适用于原生广告)
     IAdDataTypeMessageFlowThreeImages,          	// 信息流三小图(适用于原生广告)
     IAdDataTypeMessageFlowSmallImage,           	// 信息流广告小图(适用于原生广告)
-    IAdDataTypeMessageFlowSmallImageVertical,       // 信息流广告小图竖图(仅适用于原生广告)
+    IAdDataTypeMessageFlowSmallImageVertical,    // 信息流广告小图竖图(仅适用于原生广告)
     IAdDataTypeMessageFlowBigImage,             	// 信息流广告大图(适用于原生广告)
-    IAdDataTypeMessageFlowBigImageVertical,         // 信息流广告大图竖图(仅适用于原生广告)
-    IAdDataTypeRedEnvelope,                      	// 红包广告(不适用于原生广告)
-    IAdDataTypeRedVideo,					 	    // 视频广告(不适用于原生广告)
-    IAdDataTypeSmallImage						    // 小图文(仅适用于原生广告)
+    IAdDataTypeMessageFlowBigImageVertical,      // 信息流广告大图竖图(仅适用于原生广告)
+    IAdDataTypeRedEnvelope,                      // 红包广告(不适用于原生广告)
+    IAdDataTypeRedVideo,					 	                  // 视频广告(不适用于原生广告)
+    IAdDataTypeSmallImage						                  // 小图文(仅适用于原生广告)
 };
 ```
 - 广告初始、加载数据、跳转点击
@@ -132,7 +140,7 @@ typedef NS_ENUM (NSInteger, IAdDataType)
  */
 - (void)adLoaderWebViewReturn:(DRAgentLoader *)adLoader;
 ```
-####(1)、 信息流三小图
+#### (1)、 信息流三小图
 拿到数据，创建广告View，绑定数据，添加到展示广告的视图上，这里使用SDK封装好的信息流三小图View `DRAgentMessageThreeImagesView`
 ```
 // 创建信息流三小图
@@ -150,16 +158,17 @@ _messageThreeImagesView = [[DRAgentMessageThreeImagesView alloc] initWithFrame:C
 }
 ```
 **详细请看demo中`Message_ThreeImgsViewController`**
-####(2)、信息流大小图文
+#### (2)、信息流大小图文
 类似信息流三小图，这里不再重复书写。
 **详细请看demo中`Message_SmallImgViewController`|`Message_BigImgViewController `**
 #### (3)、小图文CPV
+
 ![IMG_0D7188D78D79-1.jpeg](https://upload-images.jianshu.io/upload_images/2917199-13a4b0a6e112ad19.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 类似信息流三小图，这里不再重复书写。
 **详细请看demo中`CustomSmallImgViewController`**
 
-###3、横幅(Banner)广告
+### 3、横幅(Banner)广告
 横幅广告分为横幅广告和小横幅广告，使用`DRAgentBannerView`实例出横幅类对象的View，添加到广告展示的页面。使用小横幅广告的话，type传为`IAdDataTypeBannerLow`，代码如下简写。
 ```
 - (DRAgentBannerView *)bannerView {
@@ -198,10 +207,11 @@ _messageThreeImagesView = [[DRAgentMessageThreeImagesView alloc] initWithFrame:C
 如果使用横幅广告的轮播功能。*在视图显示成功方法里开启轮播，在视图消失方法中和返回pop中关闭轮播，关闭定时器，以防每次请求数据 再次进入重新加载bannerView，避免内存泄漏。*
 **详细请看demo中BannerViewController和LowBannerViewController**
 
-###4、视频广告
+### 4、视频广告
+
 ![video.gif](https://upload-images.jianshu.io/upload_images/2917199-5d0cce27a216ae9f.gif?imageMogr2/auto-orient/strip)
 
-视频广告是姨一个icon图标作为跳转入口加载视频广告，首先初始化视频广告icon添加展示广告页面。代码如下简写。
+视频广告是以一个icon图标作为跳转入口加载视频广告，首先初始化视频广告icon添加展示广告页面。代码如下简写。
 ```
 {
 DRAgentRedVideoView *redVideoView = [[DRAgentRedVideoView alloc] initWithFrame:CGRectMake(kScreenWidth - 120, 100, 100, 125) delegate:self]; 
@@ -236,7 +246,7 @@ DRAgentRedVideoView *redVideoView = [[DRAgentRedVideoView alloc] initWithFrame:C
 ```
 ***详细请看demo中`RedVideoViewController`***
 
-##注意事项
+## 注意事项
 - 设置Enable Bitcode 为NO
 ![image.png](https://upload-images.jianshu.io/upload_images/2917199-d6efc571457bf780.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 - 项目上传App Store
@@ -246,5 +256,5 @@ SDK中用到了广告标识符(IDFA),在提交APP的时候要注意选择(如图
 如果你使用了广告,请选择1和4 关于一篇广告标识符用途的选择的博客      [广告标识符用途](http://blog.csdn.net/napianlvye1992/article/details/50496846)
 
 - 详细请看DRAgentSDKDemo
-##常见错误
+## 常见错误
 - 使用xcode9以下版本开发应用，请联系平台技术人员。
