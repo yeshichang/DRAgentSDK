@@ -35,7 +35,12 @@ SDK中用到HTTP请求，苹果在iOS9推出支持HTTP请求时求配置info.pli
 
 ![splash.gif](https://upload-images.jianshu.io/upload_images/2917199-213917edae4770c5.gif?imageMogr2/auto-orient/strip)
 
+- 开屏广告在App启动时展示的广告，具有超强的视觉冲击力，平台开屏广告支持视频广告、GIF图、和图片三种形式，其中开屏尺寸默认都使用全屏尺寸`[UIScreen mainScreen].bounds`，其中注意一下两点：  
+    1）：开屏广告在下来数据时会使用到App工程的启动图，而获得这个启动图是在launch image里面的开屏图片，若不是，则需要用开屏广告的代理(`datasource`)里面传入image为默认image，防止露白。  
+    2）：若使用logo添加在开屏底部，则需要使用开屏广告的代理(`datasource`)里面传入相应的View，View的frame对应的是window，则可以展示对应的logo，或者其他视图。
+
 - 在 AppDelegate.m中 入口方法:
+
 `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`中，
 初始化中设置开启开屏广告 
 - 在入口方法中先设置根试图在此` [self.window makeKeyAndVisible] `方法下面添加开屏广告。**如若不在此方法下，开屏广告将不会出现**
@@ -54,6 +59,28 @@ SDK中用到HTTP请求，苹果在iOS9推出支持HTTP请求时求配置info.pli
 ```
 - 高级使用，*以下为开屏广告的回调代理。*
 ```
+/*!
+ @brief 开屏广告子视图
+ @discussion 实现此代理方法,这些视图将会被自动添加在广告视图上,frame相对于window
+ @param agentSplash agentSplash
+ @return 子视图的数组
+ */
+//- (NSArray<UIView *> *)adSplashSubViews:(DRAgentSplash *)agentSplash {
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image"]];
+//    imageView.frame = CGRectMake(0, kScreenHeight- 100, kScreenWidth, 100);
+//    return @[imageView];
+//}
+
+/**
+ @brief 开屏广告启动背景，若启动图不是在launch image里面添加的请设置启动背景防止露白
+ @discussion 可以设置开屏图片来作为开屏加载时的默认图片
+ @param agentSplash agentSplash
+ @return image
+ */
+//- (UIImage *)adSplashbackgroundImage:(DRAgentSplash *)agentSplash {
+//    return [UIImage imageNamed:@"image"];
+//}
+
 - (void)adSplashDidFinishLoading:(DRAgentSplash *)agentSplash adverType:(IAdNativeType)adverType {
     NSLog(@"开屏广告数据 成功");
 }
@@ -290,4 +317,6 @@ SDK中用到了广告标识符(IDFA),在提交APP的时候要注意选择(如图
 - 详细请看DRAgentSDKDemo
 ## 常见错误
 - 使用xcode9以下版本开发应用，请联系平台技术人员。
+- 若在使用cocoapods的`pod search`搜不到`DRAgentSDK`或者不是最新版本，请更新下pod本地搜索索引`pod setup`
+
 
