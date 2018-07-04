@@ -28,7 +28,7 @@
  @param adverType 广告类型
  @param advertDataModel 广告数据模型 (model)
  */
-- (void)adLoaderDidFinishLoading:(DRAgentLoader *_Nonnull)adLoader adverType:(IAdDataType)adverType advertDataModel:(DRAgentAdvertDataModel *_Nonnull)advertDataModel;
+- (void)adLoaderDidFinishLoading:(DRAgentLoader *_Nonnull)adLoader adverType:(IAdNativeType)adverType advertDataModel:(DRAgentAdvertDataModel *_Nonnull)advertDataModel;
 
 /*!
  @brief 广告数据加载失败
@@ -63,9 +63,9 @@
 
 @required
 
-- (void)adExcitingVideoLoader:(DRAgentExcitingVideoLoader *)adLoader excitingVideoDataModel:(DRAgentExcitingVideoDataModel *_Nonnull)advertDataModel;
+- (void)adExcitingVideoLoader:(DRAgentExcitingVideoLoader *_Nonnull)adLoader excitingVideoDataModel:(DRAgentExcitingVideoDataModel *_Nonnull)advertDataModel;
 
-- (void)adExcitingVideoLoader:(DRAgentExcitingVideoLoader *)adLoader didFailToReceiveAdWithError:(NSError *_Nonnull)error;
+- (void)adExcitingVideoLoader:(DRAgentExcitingVideoLoader *_Nonnull)adLoader didFailToReceiveAdWithError:(NSError *_Nonnull)error;
 
 @end
 

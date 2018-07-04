@@ -22,7 +22,7 @@
  @param messageView messageView
  @param adverType 广告类型
  */
-- (void)adMessageDidClick:(DRAgentMessageView *_Nonnull)messageView adverType:(IAdDataType)adverType;
+- (void)adMessageDidClick:(DRAgentMessageView *_Nonnull)messageView adverType:(MESSAGEVIEWTYPE)adverType;
 
 /*!
  @brief webView点击返回 注:(有落地页，跳入webView，从webView返回广告控制器页面)
@@ -50,7 +50,7 @@
  @param adverType 广告类型
  */
 - (void)adMessageThreeImagesDidClick:(DRAgentMessageThreeImagesView *_Nonnull)messageThreeImagesView
-                           adverType:(IAdDataType)adverType __deprecated_msg("代理方法过期，请用adMessageDidClick:(DRAgentMessageView *_Nonnull)messageView adverType:(IAdDataType)adverType代替");
+                           adverType:(MESSAGEVIEWTYPE)adverType __deprecated_msg("代理方法过期，请用adMessageDidClick:(DRAgentMessageView *_Nonnull)messageView adverType:(IAdDataType)adverType代替");
 
 /*!
  @brief webView点击返回 注:(有落地页，跳入webView，从webView返回广告控制器页面)
@@ -77,7 +77,7 @@
  @param messageFlowView messageFlowView
  @param adverType 广告类型
  */
-- (void)adMessageFlowDidClick:(DRAgentMessageFlowView *_Nonnull)messageFlowView adverType:(IAdDataType)adverType __deprecated_msg("代理方法过期，请用adMessageDidClick:(DRAgentMessageView *_Nonnull)messageView adverType:(IAdDataType)adverType");
+- (void)adMessageFlowDidClick:(DRAgentMessageFlowView *_Nonnull)messageFlowView adverType:(MESSAGEVIEWTYPE)adverType __deprecated_msg("代理方法过期，请用adMessageDidClick:(DRAgentMessageView *_Nonnull)messageView adverType:(IAdDataType)adverType");
 
 /*!
  @brief webView点击返回 注:(有落地页，跳入webView，从webView返回广告控制器页面)

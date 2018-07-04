@@ -34,7 +34,7 @@
  @brief 使用广告的类型
  @discussion 设置SDK已封装好的View(threeMessageView messageFlowView)
  */
-@property (nonatomic, assign) IAdDataType messageViewType;
+@property (nonatomic, assign) MESSAGEVIEWTYPE messageViewType;
 
 /**
  @brief 初始化
@@ -51,7 +51,7 @@
  @return 广告View
  */
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                       messageViewType:(IAdDataType)messageViewType;
+                       messageViewType:(MESSAGEVIEWTYPE)messageViewType;
 
 /**
  @brief 初始化
@@ -62,7 +62,7 @@
  @return 广告View
  */
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                       messageViewType:(IAdDataType)messageViewType
+                       messageViewType:(MESSAGEVIEWTYPE)messageViewType
                               delegate:(id _Nullable)delegate NS_DESIGNATED_INITIALIZER;
 - (instancetype _Nonnull)init NS_UNAVAILABLE;
 - (instancetype _Nonnull)initWithCoder:(NSCoder *_Nonnull)aDecoder NS_UNAVAILABLE;
@@ -73,7 +73,7 @@
  @param width 自身宽度  ->注意:一定要和初始化宽度保持一致
  @return 返回高度
  */
-+ (CGFloat)getMessageViewHeightWithType:(IAdDataType)messageViewType
++ (CGFloat)getMessageViewHeightWithType:(MESSAGEVIEWTYPE)messageViewType
                                   width:(CGFloat)width;
 
 @end
@@ -122,7 +122,7 @@
  @brief 信息流大小图文的类型
  @discussion 必须传入(信息流大图文或者信息流小图文)
  */
-@property (nonatomic, assign) IAdDataType messageFlowViewType __deprecated_msg("属性过期，请用messageViewType代替");
+@property (nonatomic, assign) MESSAGEVIEWTYPE messageFlowViewType __deprecated_msg("属性过期，请用messageViewType代替");
 
 /*!
  @brief  初始化
@@ -130,7 +130,7 @@
  @return 图文广告View
  */
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                   messageFlowViewType:(IAdDataType)messageFlowViewType __deprecated_msg("方法过期，请用initWithFrame:(CGRect)frame messageViewType:(IAdDataType)messageViewType代替");
+                   messageFlowViewType:(MESSAGEVIEWTYPE)messageFlowViewType __deprecated_msg("方法过期，请用initWithFrame:(CGRect)frame messageViewType:(IAdDataType)messageViewType代替");
 
 /*!
  @brief  初始化
@@ -139,7 +139,7 @@
  @return 图文广告View
  */
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                   messageFlowViewType:(IAdDataType)messageFlowViewType
+                   messageFlowViewType:(MESSAGEVIEWTYPE)messageFlowViewType
                               delegate:(id _Nullable)delegate __deprecated_msg("方法过期，请用initWithFrame:(CGRect)frame messageViewType:(IAdDataType)messageViewType delegate:(id _Nullable)delegate代替");
 
 /*!
@@ -148,7 +148,7 @@
  @param width 自身宽度  ->注意:一定要和初始化宽度保持一致
  @return 返回高度
  */
-+ (CGFloat)getMessageFlowViewHeightWithType:(IAdDataType)adDataType
++ (CGFloat)getMessageFlowViewHeightWithType:(MESSAGEVIEWTYPE)adDataType
                                       width:(CGFloat)width __deprecated_msg("方法过期，请用getMessageViewHeightWithType:(IAdDataType)messageViewType width:(CGFloat)width代替");
 
 @end

@@ -16,6 +16,8 @@
  原生广告请求类
  */
 @interface DRAgentLoader : NSObject
+/// 广告类型
+@property (nonatomic, assign, readonly) IAdNativeType advertType;
 
 /*!
  @brief 加载数据类代理
@@ -27,7 +29,7 @@
  @param advertType 广告类型
  @return 加载数据类
  */
-- (instancetype _Nullable)initWithIAdDataType:(IAdDataType)advertType;
+- (instancetype _Nullable)initWithIAdDataType:(IAdNativeType)advertType;
 
 /*!
  @brief 初始化加载数据类
@@ -35,7 +37,7 @@
  @param delegate 代理
  @return 加载数据类
  */
-- (instancetype _Nullable)initWithIAdDataType:(IAdDataType)advertType delegate:(id _Nullable)delegate;
+- (instancetype _Nullable)initWithIAdDataType:(IAdNativeType)advertType delegate:(id _Nullable)delegate;
 
 /*!
  @brief 获取广告数据(原生广告)
@@ -70,7 +72,7 @@
 /**
  DRAgentExcitingVideoLoaderAdDelegate
  */
-@property (nonatomic, weak) id <DRAgentExcitingVideoLoaderAdDelegate>videoDelegate;
+@property (nonatomic, weak) id <DRAgentExcitingVideoLoaderAdDelegate>_Nullable videoDelegate;
 
 /*!
  @brief 初始化激励视频广告加载类
@@ -90,12 +92,12 @@
  @param dataModel       广告渲染的数据对象
  @param view            渲染出的广告结果页面
  */
-- (void)attachNativeExcitingVideoAd:(id _Nonnull)dataModel toView:(UIView *)view;
+- (void)attachNativeExcitingVideoAd:(id _Nonnull)dataModel toView:(UIView *_Nullable)view;
 
 
 #pragma mark - NS_UNAVAILABLE
-- (instancetype)initWithIAdDataType:(IAdDataType)advertType delegate:(id)delegate NS_UNAVAILABLE;
-- (instancetype)initWithIAdDataType:(IAdDataType)advertType NS_UNAVAILABLE;
+- (instancetype _Nonnull)initWithIAdDataType:(IAdNativeType)advertType delegate:(id _Nullable)delegate NS_UNAVAILABLE;
+- (instancetype _Nonnull)initWithIAdDataType:(IAdNativeType)advertType NS_UNAVAILABLE;
 - (void)loadNativeRequest NS_UNAVAILABLE;
 
 @end

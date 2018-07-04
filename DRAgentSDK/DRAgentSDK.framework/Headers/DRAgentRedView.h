@@ -24,8 +24,8 @@
  @param delegate 代理
  @return 该类红包View
  */
-- (instancetype)initWithFrame:(CGRect)frame delegate:(id _Nullable)delegate NS_DESIGNATED_INITIALIZER;
-- (instancetype)initWithCoder:(NSCoder *_Nonnull)aDecoder NS_UNAVAILABLE;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame delegate:(id _Nullable)delegate NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nonnull)initWithCoder:(NSCoder *_Nonnull)aDecoder NS_UNAVAILABLE;
 
 @end
 

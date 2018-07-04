@@ -20,7 +20,7 @@
  @param bannerView bannerView
  @param adverType 广告类型
  */
-- (void)adBannerDidFinishLoading:(DRAgentBannerView *_Nonnull)bannerView adverType:(IAdDataType)adverType;
+- (void)adBannerDidFinishLoading:(DRAgentBannerView *_Nonnull)bannerView adverType:(IAdBannerType)adverType;
 
 /*!
  @brief Banner广告数据加载失败
@@ -38,7 +38,7 @@
  @param bannerView bannerView
  @param adverType 广告类型
  */
-- (void)adBannerDidClick:(DRAgentBannerView *_Nonnull)bannerView adverType:(IAdDataType)adverType;
+- (void)adBannerDidClick:(DRAgentBannerView *_Nonnull)bannerView adverType:(IAdBannerType)adverType;
 
 /*!
  @brief Banner广告关闭按钮被点击

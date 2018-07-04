@@ -39,9 +39,7 @@ SDK中用到HTTP请求，苹果在iOS9推出支持HTTP请求时求配置info.pli
     1）：开屏广告在下来数据时会使用到App工程的启动图，而获得这个启动图是在launch image里面的开屏图片，若不是，则需要用开屏广告的代理(`datasource`)里面传入image为默认image，防止露白。  
     2）：若使用logo添加在开屏底部，则需要使用开屏广告的代理(`datasource`)里面传入相应的View，View的frame对应的是window，则可以展示对应的logo，或者其他视图。
 
-- 在 AppDelegate.m中 入口方法:
-
-`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`中，
+- 在 AppDelegate.m中 入口方法:`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`中，
 初始化中设置开启开屏广告 
 - 在入口方法中先设置根试图在此` [self.window makeKeyAndVisible] `方法下面添加开屏广告。**如若不在此方法下，开屏广告将不会出现**
 ```

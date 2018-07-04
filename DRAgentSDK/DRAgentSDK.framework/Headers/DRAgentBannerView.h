@@ -17,7 +17,7 @@
 /*!
  @brief 关闭按钮是否展示 默认为YES展示
  */
-@property (nonatomic, assign) BOOL isShowCloseButton;
+@property (nonatomic, assign) BOOL isShowCloseButton __deprecated_msg("属性过期");
 
 /*!
  @brief Banner 代理
@@ -28,7 +28,7 @@
  @brief Banner的类型
  @discussion 必须传入(横幅或者小横幅广告类型)
  */
-@property (nonatomic, assign) IAdDataType bannerViewType;
+@property (nonatomic, assign) IAdBannerType bannerViewType;
 
 /*!
  @brief 初始化BannerView
@@ -37,7 +37,7 @@
  @return                    该类BannerView
  */
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                            AdDataType:(IAdDataType)adDataType __deprecated_msg("方法过期，请用initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType代替");
+                            AdDataType:(IAdBannerType)adDataType __deprecated_msg("方法过期，请用initWithFrame:(CGRect)frame bannerViewType:(IAdDataType)bannerViewType代替");
 
 /*!
  @brief 初始化BannerView
@@ -46,7 +46,7 @@
  @return                    该类BannerView
  */
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                        bannerViewType:(IAdDataType)bannerViewType;
+                        bannerViewType:(IAdBannerType)bannerViewType;
 
 /*!
  @brief 初始化BannerView
@@ -56,7 +56,7 @@
  @return                    该类BannerView
  */
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame
-                        bannerViewType:(IAdDataType)bannerViewType
+                        bannerViewType:(IAdBannerType)bannerViewType
                               delegate:(id _Nullable)delegate NS_DESIGNATED_INITIALIZER;
 - (instancetype _Nonnull)init NS_UNAVAILABLE;
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
@@ -73,7 +73,7 @@
  @param width               banner宽度 ->注意:一定要和初始化宽度保持一致
  @return                    banner高度
  */
-+ (CGFloat)getBannerViewHeightWithType:(IAdDataType)adDataType
++ (CGFloat)getBannerViewHeightWithType:(IAdBannerType)adDataType
                                  width:(CGFloat)width;
 
 #pragma mark *** 定时器轮播使用 ***
@@ -90,11 +90,11 @@
 /*!
  @brief 打开定时器
  */
-- (void)resumeTimer;
+- (void)resumeTimer __deprecated_msg("方法过期，取消轮播功能");
 
 /*!
  @brief 关闭定时器
  */
-- (void)cancelTimer;
+- (void)cancelTimer __deprecated_msg("方法过期，取消轮播功能");
 
 @end
