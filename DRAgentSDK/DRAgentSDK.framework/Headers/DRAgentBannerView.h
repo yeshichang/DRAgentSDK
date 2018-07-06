@@ -26,14 +26,13 @@
 
 /*!
  @brief Banner的类型
- @discussion 必须传入(横幅或者小横幅广告类型)
  */
 @property (nonatomic, assign) IAdBannerType bannerViewType;
 
 /*!
  @brief 初始化BannerView
  @param frame               banner尺寸frame
- @param adDataType          banner广告类型 (横幅广告  小横幅广告)
+ @param adDataType          banner广告类型
  @return                    该类BannerView
  */
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame
@@ -42,7 +41,7 @@
 /*!
  @brief 初始化BannerView
  @param frame               banner尺寸frame
- @param bannerViewType      banner广告类型 (横幅广告  小横幅广告)
+ @param bannerViewType      banner广告类型
  @return                    该类BannerView
  */
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame
@@ -51,7 +50,7 @@
 /*!
  @brief 初始化BannerView
  @param frame               banner尺寸frame
- @param bannerViewType      banner广告类型 (横幅广告  小横幅广告)
+ @param bannerViewType      banner广告类型
  @param delegate            代理
  @return                    该类BannerView
  */
@@ -69,7 +68,7 @@
 
 /*!
  @brief 通过banner宽度获取其的高度
- @param adDataType          banner广告类型 (横幅广告  小横幅广告)
+ @param adDataType          banner广告类型 
  @param width               banner宽度 ->注意:一定要和初始化宽度保持一致
  @return                    banner高度
  */
