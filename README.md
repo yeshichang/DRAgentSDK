@@ -41,9 +41,9 @@ SDK中用到HTTP请求，苹果在iOS9推出支持HTTP请求时求配置info.pli
 
 - 在 AppDelegate.m中 入口方法:`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`中，
 初始化中设置开启开屏广告 
-- 在入口方法中先设置根试图在此` [self.window makeKeyAndVisible] `方法下面添加开屏广告。**如若不在此方法下，开屏广告将不会出现**
 ```
-{
+/// 加载开屏广告
+- (void)luomi_splashShow {
     DRAgentSplash *splash = [[DRAgentSplash alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 设置拉取广告时间(超时则取消开屏广告，视为广告展示失败)
     splash.fetchDelay = 3;
@@ -53,6 +53,8 @@ SDK中用到HTTP请求，苹果在iOS9推出支持HTTP请求时求配置info.pli
     splash.delegate = self;
     // 加载开屏广告
     [splash loadSplashRequest];
+    // 强引用加载类，防止释放无法加载广告
+    _splash = splash;
 }
 ```
 - 高级使用，*以下为开屏广告的回调代理。*
@@ -76,15 +78,12 @@ SDK中用到HTTP请求，苹果在iOS9推出支持HTTP请求时求配置info.pli
  @return image
  */
 //- (UIImage *)adSplashbackgroundImage:(DRAgentSplash *)agentSplash {
-//    return [UIImage imageNamed:@"image"];
+//    return [UIImage imageNamed:@"ffff"];
 //}
 
-- (void)adSplashDidFinishLoading:(DRAgentSplash *)agentSplash adverType:(IAdNativeType)adverType {
-    NSLog(@"开屏广告数据 成功");
-}
-- (void)adSplash:(DRAgentSplash *)agentSplash didFailToReceiveAdWithError:(NSError *)error {
-    NSLog(@"开屏广告数据 失败  = %@",error);
-}
+/*
+ * 开屏广告展示
+ */
 - (void)adSplashShowed:(DRAgentSplash *)agentSplash adverType:(IAdNativeType)adverType didFailToReceiveAdWithError:(NSError *)error {
     if (!error) {
         NSLog(@"开屏广告展示广告");
@@ -92,14 +91,36 @@ SDK中用到HTTP请求，苹果在iOS9推出支持HTTP请求时求配置info.pli
         NSLog(@"开屏广告展示失败 = %@",error);
     }
 }
+/*
+ * 开屏广告数据 成功
+ */
+- (void)adSplashDidFinishLoading:(DRAgentSplash *)agentSplash adverType:(IAdNativeType)adverType {
+    NSLog(@"%s",__FUNCTION__);
+}
+/*
+ * 开屏广告数据 失败
+ */
+- (void)adSplash:(DRAgentSplash *)agentSplash didFailToReceiveAdWithError:(NSError *)error {
+    NSLog(@"%s",__FUNCTION__);
+}
+/*
+ * 开屏广告点击广告
+ */
 - (void)adSplashDidClick:(DRAgentSplash *)agentSplash adverType:(IAdNativeType)adverType {
-    NSLog(@"开屏广告点击广告");
+    NSLog(@"%s",__FUNCTION__);
 }
+/*
+ * 开屏广告视图消失
+ */
 - (void)adSplashscreenDismiss:(DRAgentSplash *)agentSplash {
-    NSLog(@"开屏广告视图消失");
+    NSLog(@"%s",__FUNCTION__);
+    _splash = nil;
 }
+/*
+ * 广告webView 返回
+ */
 - (void)adSplashWebViewReturn:(DRAgentSplash *)agentSplash {
-    NSLog(@"从广告webView返回");
+    NSLog(@"%s",__FUNCTION__);
 }
 ```
 ### 2、原生广告
@@ -189,11 +210,17 @@ typedef NS_ENUM (NSInteger, IAdNativeType)
 ```
 - 高级使用，*以下为三小图广告的回调代理。*
 ```
-- (void)adMessageDidClick:(DRAgentMessageView *_Nonnull)messageView adverType:(MESSAGEVIEWTYPE)adverType {
-    NSLog(@"信息流三小图 点击");
+/*
+ * 信息流三小图 点击
+ */
+- (void)adMessageDidClick:(DRAgentMessageView *)messageView adverType:(MESSAGEVIEWTYPE)adverType {
+    NSLog(@"%s",__FUNCTION__);
 }
-- (void)adMessageWebViewReturn:(DRAgentMessageView *_Nonnull)messageView {
-    NSLog(@"webView返回");
+/*
+ * webView返回
+ */
+- (void)adMessageWebViewReturn:(DRAgentMessageView *)messageView {
+    NSLog(@"%s",__FUNCTION__);
 }
 ```
 **详细请看demo中`Message_ThreeImgsViewController`**
@@ -243,21 +270,36 @@ typedef NS_ENUM (NSInteger, IAdBannerType)
 ```
 - 高级使用，*以下为横幅广告的回调代理。*
 ```
-- (void)adBannerDidFinishLoading:(DRAgentBannerView *)bannerView adverType:(IAdBannerType)adverType {
-    NSLog(@"加载banner广告成功");
-    [self.view addSubview:_bannerView];
+/*
+ * banner广告成功
+ */
+- (void)adBannerDidFinishLoading:(DRAgentBannerView *)bannerView adverType:(IAdBannerType)adverType  {
+    NSLog(@"%s",__FUNCTION__);
+    [self.view addSubview:bannerView];
 }
+/*
+ * banner广告失败
+ */
 - (void)adBanner:(DRAgentBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error {
-    NSLog(@"加载banner广告失败  error-->%@",error);
+    NSLog(@"banner广告 失败  code-->%ld",(long)error.code);
 }
+/*
+ * banner广告点击
+ */
 - (void)adBannerDidClick:(DRAgentBannerView *)bannerView adverType:(IAdBannerType)adverType {
-    NSLog(@"banner广告点击");
+    NSLog(@"%s",__FUNCTION__);
 }
+/*
+ * 关闭按钮回调
+ */
 - (void)adBannerDidClickCloseButton:(DRAgentBannerView *)bannerView {
-    NSLog(@"banner广告关闭按钮回调");
+    NSLog(@"%s",__FUNCTION__);
 }
+/*
+ * webView返回
+ */
 - (void)adBannerWebViewReturn:(DRAgentBannerView *)bannerView {
-    NSLog(@"banner广告从广告webView返回");
+    NSLog(@"%s",__FUNCTION__);
 }
 ```
 ***
@@ -272,33 +314,68 @@ typedef NS_ENUM (NSInteger, IAdBannerType)
 ```
 {
     DRAgentRedVideoView *redVideoView = [[DRAgentRedVideoView alloc] initWithFrame:CGRectMake(kScreenWidth - 120, 100, 100, 125) delegate:self]; 
-    [self.view addSubview:redVideoView];
+    self.redVideoView = redVideoView;
 }
 ```
 - 高级使用，*以下为视频广告的回调代理。*
 ```
-- (void)adRedDidClick:(DRAgentRedView *)redView {
-    NSLog(@"红包icon被点击");
+/*
+ * 红包图标数据加载
+ */
+- (void)adRedVideoImageIconLoadingFinished:(DRAgentRedVideoView *)redVideoView reciveAdWithError:(NSError *)error {
+    if (!error) {
+        NSLog(@"红包图标数据加载成功");
+        [self.view addSubview:redVideoView];
+        // redVideoViewLabel
+        CGFloat x = redVideoView.frame.origin.x;
+        CGFloat y = redVideoView.frame.origin.y + redVideoView.frame.size.height;
+        CGFloat width = redVideoView.frame.size.width;
+        CGFloat height = 30;
+        self.redVideoViewLabel.frame = CGRectMake(x, y, width, height);
+        [self.view addSubview:self.redVideoViewLabel];
+        
+        // 添加时间控制切换icon图标
+        // _timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(loadRequestTimers) userInfo:nil repeats:YES];
+
+    } else {
+        NSLog(@"红包图标数据加载失败 = %@",error);
+    }
 }
+/*
+ * 红包数据中title数据
+ */
+- (void)adRedVideoImageIconLoadingFinished:(NSString *)iconTitle {
+    if (iconTitle) {
+        self.redVideoViewLabel.text = iconTitle;
+    }
+}
+/*
+ * 红包icon被点击
+ */
+- (void)adRedDidClick:(DRAgentRedView *)redView {
+    NSLog(@"%s",__FUNCTION__);
+}
+/*
+ * 红包视频广告数据加载
+ */
 - (void)adRedVideoDataLoadingFinished:(DRAgentRedVideoView *)redVideoView reciveAdWithError:(NSError *)error {
     if (!error) {
         NSLog(@"红包数据加载成功");
     } else {
         NSLog(@"红包数据加载失败 = %@",error);
-        }
-}
-- (void)adRedVideoImageIconLoadingFinished:(DRAgentRedVideoView *)redVideoView reciveAdWithError:(NSError *)error {
-    if (!error) {
-        NSLog(@"红包图标数据加载成功");
-    } else {
-        NSLog(@"红包图标数据加载失败 = %@",error);
     }
 }
+/*
+ * 视频广告展示播放
+ */
 - (void)adRedVideoShowVideoPlay:(DRAgentRedVideoView *)redVideoView currentIndex:(NSInteger)currectIndex {
     NSLog(@"视频广告展示播放 -- %ld",(long)currectIndex);
 }
+/*
+ * 视频广告点击下载按钮
+ */
 - (void)adRedVideoDidClickDownButton:(DRAgentRedVideoView *)redVideoView {
-    NSLog(@"视频广告点击下载按钮");
+    NSLog(@"%s",__FUNCTION__);
 }
 ```
 ***详细请看demo中`RedVideoViewController`***
