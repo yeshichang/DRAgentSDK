@@ -17,7 +17,7 @@
 /*!
  @brief 关闭按钮是否展示 默认为YES展示
  */
-@property (nonatomic, assign) BOOL isShowCloseButton __deprecated_msg("属性过期");
+@property (nonatomic, assign) BOOL isShowCloseButton;
 
 /*!
  @brief Banner 代理
@@ -60,6 +60,12 @@
 - (instancetype _Nonnull)init NS_UNAVAILABLE;
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype _Nonnull)initWithCoder:(NSCoder *_Nonnull)aDecoder NS_UNAVAILABLE;
+
+/*!
+ @brief      当横幅广告为视频时，是否播放声音
+ @discussion 默认值为YES，播放音频
+ */
+@property (nonatomic, assign) BOOL muted;
 
 /*!
  @brief 加载Banner数据
