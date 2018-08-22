@@ -112,6 +112,7 @@ typedef NS_ENUM (NSInteger, IAdBannerType)
  - IAdNativeTypeMessageFlowBigImageVertical: 信息流广告大图竖图(仅适用于原生广告)
  - IAdNativeTypeSmallImage: 小图文
  - IAdNativeTypeSmallImageVertical: 小图文竖
+ - IAdNativeTypeSmallImageVertical: 小图文170*100
  */
 typedef NS_ENUM (NSInteger, IAdNativeType)
 {
@@ -122,6 +123,7 @@ typedef NS_ENUM (NSInteger, IAdNativeType)
     IAdNativeTypeMessageFlowBigImageVertical        =   8,
     IAdNativeTypeSmallImage                         =   9,
     IAdNativeTypeSmallImageVertical                 =   10,
+    IAdNativeTypeSmallImage170_100                  =   103,
 };
 
 /**
